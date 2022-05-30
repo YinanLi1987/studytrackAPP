@@ -12,7 +12,10 @@ app.use(express.json());
 app.get("/fruits", (req, res, next) => {
     res.json(["Banana","Apple","Kiwi"]);
     });
-    app.get('SERVER_SIDE/database.sql', async (req, res) => {
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "home.html"));
+    });
+app.get('SERVER_SIDE/database.sql', async (req, res) => {
 
         const pool = (() => {
             return new Pool({
