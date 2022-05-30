@@ -15,6 +15,7 @@ app.get("/fruits", (req, res, next) => {
     app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "home.html"));
     });
+    app.use('/', serveStatic(path.join(__dirname, 'home.css')));
 app.get('SERVER_SIDE/database.sql', async (req, res) => {
 
         const pool = (() => {
