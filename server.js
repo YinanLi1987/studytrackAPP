@@ -16,6 +16,7 @@ app.get("/fruits", (req, res, next) => {
         res.sendFile(path.join(__dirname, "UI/home.html"));
     });
     app.use('/', serveStatic(path.join(__dirname, 'UI')));
+
 app.get('SERVER_SIDE/database.sql', async (req, res) => {
 
         const pool = (() => {
@@ -52,7 +53,7 @@ app.get('SERVER_SIDE/database.sql', async (req, res) => {
           const {fName,mname, lname, email, phoneNumber,userType,password} = req.body;
           const hashedPassword = await bcrypt.hash(req.body.password, 10)
           const client = await pool.connect();
-          client.query('INSERT INTO usersInfo VALUES (DEFAULT,$1, $2, $3,$4)',[fName, mname,lname,email, phoneNumber,userType,hashedPassword]);
+          client.query('INSERT INTO usersInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7)',[fName, mname,lname,email, phoneNumber,userType,hashedPassword]);
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
           res.redirect('/')
