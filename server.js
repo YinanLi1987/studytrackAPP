@@ -12,13 +12,13 @@ app.use(express.json());
 app.get("/fruits", (req, res, next) => {
     res.json(["Banana","Apple","Kiwi"]);
     });
-    app.get("/", function(req, res) {
+app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "UI/home.html"));
     });
-    app.use('/', serveStatic(path.join(__dirname, 'UI')));
+app.use('/', serveStatic(path.join(__dirname, 'UI')));
 
-app.get('SERVER_SIDE/database.sql', async (req, res) => {
-
+app.get('/db', async (req, res) => {
+    const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
                 connectionString: process.env.DATABASE_URL,
