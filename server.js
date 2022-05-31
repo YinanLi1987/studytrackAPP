@@ -41,6 +41,7 @@ app.get('/db', async (req, res) => {
 
 
       app.post('/submit', async (req, res) => {
+        const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
                 connectionString: process.env.DATABASE_URL,
