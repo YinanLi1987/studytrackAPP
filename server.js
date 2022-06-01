@@ -89,39 +89,7 @@ app.post('/submit', async (req, res) => {
             res.json({ error: err });
         }
       });
-// validate login status and redirect to target page
-passport.use(new BasicStrategy(
-    function(Email, Password, done) {
-//link to database
-        const { Pool } = require('pg'); 
-        const pool = (() => {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            }); 
-        })();
- // find out the user exist or not
-      const {Email, Password} = req.body;
-      const client = await pool.connect();
-      const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[Email])
-      const loginUser = (user) ? user.rows : null;
-      try {
-        if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
-            done(null, user);
-            res.send('Logged in successfully');
-            res.redirect('/')
-        } else {
-            done(null, false);
-            res.send('Incorrect username or password')
-          }
-        client.release();
-    } catch (err) {
-        console.error(err);
-        res.json({ error: err });
-        }
-      }))
+
    
 
 
