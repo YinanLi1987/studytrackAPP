@@ -109,12 +109,7 @@ app.post('/login', async (req, res) => {
   // compare the password
   try {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
-         if (loginUser[0].userType=="Teacher"){
-            res.redirect('/teacher_home')
-          } 
-          else if (loginUser[0].userType=="Student"){
-            res.redirect('/student_home')
-          }
+        res.send('Logged in successfully');
       } else {
           res.send('Incorrect username or password')
         }
