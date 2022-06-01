@@ -12,7 +12,7 @@ app.use(express.json());
 app.get("/fruits", (req, res, next) => {
     res.json(["Banana","Apple","Kiwi"]);
     });
-// get home page
+// get each page
 app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "UI/home.html"));
     });
@@ -90,42 +90,47 @@ app.post('/submit', async (req, res) => {
         }
       });
 // validate login status and redirect to target page
-
-app.post('/login', async (req, res) => {
-    const pool = (() => {
-        return new Pool({
-            connectionString: process.env.DATABASE_URL,
-            ssl: {
-                rejectUnauthorized: false
-            }
-        }); 
-    })();
-  // find out the user exist or not
-  const {Email, Password} = req.body;
-  const client = await pool.connect();
-  const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[Email])
-  const loginUser = (user) ? user.rows : null;
-  console.log(user);
-  console.log(loginUser);
- 
- //------------this following 3 line3 of code does not work as expected-------------------
-  if (loginUser==null) {
-      return res.status(400).send('Incorrect username or password')
-  }
-  // compare the password
-  try {
-      if(await bcrypt.compare(req.body.password, loginUser[0].password)) {
-          res.send('Logged in successfully');
-          res.redirect('/')
-      } else {
-          res.send('Incorrect username or password')
+passport.use(new BasicStrategy(
+    function(Email, Password, done) {
+//link to database
+        const { Pool } = require('pg'); 
+        const pool = (() => {
+            return new Pool({
+                connectionString: process.env.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            }); 
+        })();
+ // find out the user exist or not
+      const {Email, Password} = req.body;
+      const client = await pool.connect();
+      const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[Email])
+      const loginUser = (user) ? user.rows : null;
+      try {
+        if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
+            done(null, user);
+            res.send('Logged in successfully');
+            res.redirect('/')
+        } else {
+            done(null, false);
+            res.send('Incorrect username or password')
+          }
+        client.release();
+    } catch (err) {
+        console.error(err);
+        res.json({ error: err });
         }
-      client.release();
-  } catch (err) {
-      console.error(err);
-      res.json({ error: err });
-      }
-    });
+      }))
+   
+
+
+
+
+
+
+
+  
 
 
 
