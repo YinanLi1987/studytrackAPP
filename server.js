@@ -105,11 +105,18 @@ app.post('/login', async (req, res) => {
   const client = await pool.connect();
   const user = await client.query('SELECT email,userType, password FROM usrInfo WHERE email=$1;',[Email])
   const loginUser = (user) ? user.rows : null;
-  console.log(loginUser)
+  
   // compare the password
   try {
-      if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
-        res.send('Logged in successfully');
+      if(await bcrypt.compare(req.body.Password, loginUser[0].password) ){
+       
+        switch(loginUser[0].userType){
+            case 'Teacher':
+                res.redirect('/teacher_home')
+                break;
+            case 'Student':
+                res.redirect('/teacher_home')
+                break;  }    
       } else {
           res.send('Incorrect username or password')
         }
