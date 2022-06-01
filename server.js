@@ -90,7 +90,7 @@ app.post('/submit', async (req, res) => {
         }
       });
 //log in validate and redirect to target page
-app.post('/login', async (req, res) => {
+app.get('/login', async (req, res) => {
     const pool = (() => {
         return new Pool({
             connectionString: process.env.DATABASE_URL,
