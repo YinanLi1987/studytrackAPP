@@ -112,7 +112,7 @@ app.post('/login', async (req, res) => {
        
         if (loginUser[0].usertype=="teacher"){
             
-            res.redirect('/teacher_home')
+            res.redirect('/teacher_home');
            
             document.getElementById("user").value = loginUser[0].fname;
 
