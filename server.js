@@ -82,7 +82,6 @@ app.post('/submit', async (req, res) => {
           client.query('INSERT INTO usrInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6)',[fname, lname,email, phoneNumber,userType,hashedPassword]);
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
-          res.send("Please log in.")
           res.redirect('/')
           client.release();
       } catch (err) {
@@ -90,7 +89,44 @@ app.post('/submit', async (req, res) => {
             res.json({ error: err });
         }
       });
-
+//log in validate and redirect to target page
+app.post('/login', async (req, res) => {
+    const pool = (() => {
+        return new Pool({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        }); 
+    })();
+  // find out the user exist or not
+  const {Email, Password} = req.body;
+  const client = await pool.connect();
+  const user = await client.query('SELECT email,userType, password FROM usersInfo WHERE email=$1;',[Email])
+  const loginUser = (user) ? user.rows : null;
+ 
+ //------------this following 3 line3 of code does not work as expected-------------------
+  if (loginUser==null) {
+      return res.status(400).send('Incorrect username or password')
+  }
+  // compare the password
+  try {
+      if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
+         if (loginUser[0].userType=="Teacher"){
+            res.redirect('/teacher_home')
+          } 
+          else if (loginUser[0].userType=="Student"){
+            res.redirect('/student_home')
+          }
+      } else {
+          res.send('Incorrect username or password')
+        }
+      client.release();
+  } catch (err) {
+      console.error(err);
+      res.json({ error: err });
+      }
+    });
    
 
 
