@@ -89,7 +89,7 @@ app.post('/submit', async (req, res) => {
             res.json({ error: err });
         }
       });
-// validate login status
+// validate login status and redirect to target page
 
 app.post('/login', async (req, res) => {
     const pool = (() => {
@@ -105,6 +105,7 @@ app.post('/login', async (req, res) => {
   const client = await pool.connect();
   const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[email])
   const loginUser = (user) ? user.rows : null;
+  console.log(user);
  
  //------------this following 3 line3 of code does not work as expected-------------------
   if (loginUser==null) {
