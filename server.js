@@ -101,11 +101,12 @@ app.post('/login', async (req, res) => {
         }); 
     })();
   // find out the user exist or not
-  const {email, password} = req.body;
+  const {Email, Password} = req.body;
   const client = await pool.connect();
-  const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[email])
+  const user = await client.query('SELECT email, password,userType FROM usrInfo WHERE email=$1;',[Email])
   const loginUser = (user) ? user.rows : null;
   console.log(user);
+  console.log(loginUser);
  
  //------------this following 3 line3 of code does not work as expected-------------------
   if (loginUser==null) {
