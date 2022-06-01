@@ -90,7 +90,7 @@ app.post('/submit', async (req, res) => {
         }
       });
 //log in validate and redirect to target page
-app.get('/login', async (req, res) => {
+app.post('/login', async (req, res) => {
     const pool = (() => {
         return new Pool({
             connectionString: process.env.DATABASE_URL,
@@ -102,13 +102,9 @@ app.get('/login', async (req, res) => {
   // find out the user exist or not
   const {Email, Password} = req.body;
   const client = await pool.connect();
-  const user = await client.query('SELECT email,userType, password FROM usersInfo WHERE email=$1;',[Email])
+  const user = await client.query('SELECT email,userType, password FROM usrInfo WHERE email=$1;',[Email])
   const loginUser = (user) ? user.rows : null;
- 
- //------------this following 3 line3 of code does not work as expected-------------------
-  if (loginUser==null) {
-      return res.status(400).send('Incorrect username or password')
-  }
+
   // compare the password
   try {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password)) {
