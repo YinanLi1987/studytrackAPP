@@ -82,7 +82,8 @@ app.post('/submit', async (req, res) => {
           client.query('INSERT INTO usrInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6)',[fname, lname,email, phoneNumber,userType,hashedPassword]);
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
-          res.redirect('/login')
+          res.send("Please log in.")
+          res.redirect('/')
           client.release();
       } catch (err) {
             console.error(err);
