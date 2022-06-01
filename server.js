@@ -110,8 +110,9 @@ app.post('/login', async (req, res) => {
   try {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password) ){
         if (loginUser[0].usertype=="teacher"){
-            res.redirect('/teacher_home')
             console.log(loginUser[0].fname)
+            res.redirect('/teacher_home')
+           
             document.getElementById("user").value = loginUser[0].fname;
 
           } 
