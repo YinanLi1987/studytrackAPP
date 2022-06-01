@@ -91,6 +91,7 @@ app.post('/submit', async (req, res) => {
       });
 //log in validate and redirect to target page
 app.post('/login', async (req, res) => {
+    const { Pool } = require('pg');
     const pool = (() => {
         return new Pool({
             connectionString: process.env.DATABASE_URL,
