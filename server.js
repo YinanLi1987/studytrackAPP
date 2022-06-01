@@ -115,6 +115,7 @@ app.post('/login', async (req, res) => {
           } 
           else if (loginUser[0].usertype=="student"){
             res.redirect('/student_home');
+            console.log(loginUser[0].fname)
             document.getElementById("user").value = loginUser[0].fname;
           }
       } else {
