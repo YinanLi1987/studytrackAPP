@@ -112,7 +112,7 @@ app.post('/login', async (req, res) => {
        
         switch(loginUser[0].userType){
             case 'Teacher':
-                res.redirect('/teacher_home')
+                res.redirect('/')
                 break;
             case 'Student':
                 res.redirect('/teacher_home')
