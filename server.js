@@ -8,6 +8,7 @@ const passport = require('passport');
 const BasicStrategy= require('passport-http').BasicStrategy;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
+app.set('view engine', 'ejs')
 // test
 app.get("/fruits", (req, res, next) => {
     res.json(["Banana","Apple","Kiwi"]);
@@ -19,7 +20,8 @@ app.get("/", function(req, res) {
 app.use('/', serveStatic(path.join(__dirname, 'UI')));
 
 app.get("/teacher_home", function(req, res) {
-    res.sendFile(path.join(__dirname, "UI/teacher_home.html"));
+    res.render("teacher_home.ejs")
+    //res.sendFile(path.join(__dirname, "UI/teacher_home.html"));
 });
 app.use('/teacher_home', serveStatic(path.join(__dirname, 'UI')));
 
@@ -111,21 +113,14 @@ app.post('/login', async (req, res) => {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password) ){
        
         if (loginUser[0].usertype=="teacher"){
-            
-            
             res.redirect('/teacher_home');
-           
-            
-
           } 
           else if (loginUser[0].usertype=="student"){
-            res.redirect('/student_home');
-           
+            res.redirect('/student_home');           
           }
       } else {
           res.send('Incorrect username or password')
         }
-       document.getElementById("user").value = loginUser[0].fname;
        client.release();
   } catch (err) {
       console.error(err);
