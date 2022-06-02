@@ -113,9 +113,9 @@ app.post('/login', async (req, res) => {
         if (loginUser[0].usertype=="teacher"){
             
             
-            res.redirect('/teacher_home')
+            res.redirect('/teacher_home');
            
-            document.getElementById("user").value = loginUser[0].fname;
+            
 
           } 
           else if (loginUser[0].usertype=="student"){
@@ -125,7 +125,8 @@ app.post('/login', async (req, res) => {
       } else {
           res.send('Incorrect username or password')
         }
-      client.release();
+       document.getElementById("user").value = loginUser[0].fname;
+       client.release();
   } catch (err) {
       console.error(err);
       res.json({ error: err });
