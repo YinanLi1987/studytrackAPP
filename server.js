@@ -20,8 +20,8 @@ app.get("/", function(req, res) {
 app.use('/', serveStatic(path.join(__dirname, 'UI')));
 
 app.get("/teacher_home", function(req, res) {
-    res.render("teacher_home.ejs")
-    //res.sendFile(path.join(__dirname, "UI/teacher_home.html"));
+    
+    res.sendFile(path.join(__dirname, "UI/teacher_home.html"));
 });
 app.use('/teacher_home', serveStatic(path.join(__dirname, 'UI')));
 
