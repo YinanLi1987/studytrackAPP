@@ -127,8 +127,30 @@ app.post('/login', async (req, res) => {
       res.json({ error: err });
       }
     });
-   
-
+ //create a new course  
+    app.post('/create', async (req, res) => {
+        const { Pool } = require('pg');
+        const pool = (() => {
+            return new Pool({
+                connectionString: process.env.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            });
+        })();
+      try {
+          const {courseName, courseContent, credits, numberOfLectures,examDate} = req.body;
+          const client = await pool.connect();
+          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5)',[courseName, courseContent, credits, numberOfLectures,examDate]);
+      //const results = { 'results': (result) ? result.rows : null};
+      //res.json( results );
+          res.redirect('/teacher_course')
+          client.release();
+      } catch (err) {
+            console.error(err);
+            res.json({ error: err });
+        }
+      });
 
 
 
