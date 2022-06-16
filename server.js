@@ -8,7 +8,7 @@ const passport = require('passport');
 const BasicStrategy= require('passport-http').BasicStrategy;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
-app.set('view engine', 'ejs')
+
 // test
 app.get("/fruits", (req, res, next) => {
     res.json(["Banana","Apple","Kiwi"]);
