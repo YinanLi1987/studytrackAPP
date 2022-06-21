@@ -63,7 +63,7 @@ app.get('/db', async (req, res) => {
           }
       });
     // get data from table course
-app.get('/courseInfo ', async (req, res) => {
+app.get('/db2 ', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({

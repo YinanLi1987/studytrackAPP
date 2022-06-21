@@ -1,3 +1,7 @@
+Database
+d9q6kt8p73kfmr
+
+
 CREATE TABLE usrInfo (
     userId SERIAL,
     fname VARCHAR(255) NOT NULL,
