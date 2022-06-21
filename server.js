@@ -75,9 +75,9 @@ app.get('/courseInfo ', async (req, res) => {
         })();
     try {
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM courseInfo ;');
-        const results = { 'results': (result) ? result.rows : null};
-        res.json( results );
+        const result2 = await client.query('SELECT * FROM courseInfo ;');
+        const results2 = { 'results': (result2) ? result2.rows : null};
+        res.json( results2 );
         client.release();
     } catch (err) {
           console.error(err);
