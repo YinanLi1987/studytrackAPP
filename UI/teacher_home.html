@@ -106,7 +106,7 @@
         xhr.onload=function(){
             if(this.status==200){
                var courses=JSON.parse (this.responseText);
-               console.log(courses);
+               console.log(courses[0]);
             }
     }
     //send request
