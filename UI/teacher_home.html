@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body>
+<body onload="loadJason()">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -18,6 +18,7 @@
         <a href="#" id="message">Message</a>
         <a href="#" id="user" > user </a>
     </div>
+    <div id="courseList"></div>
     <div id="editInfo">
         <div class="editInformation">
             
@@ -94,7 +95,23 @@
     });
         document.getElementById("cancel4").addEventListener("click",function(){
             document.querySelector("#create").style.display="none";
-    })
+    });
+
+    
+    function loadJason(){
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
+        xhr.onload=function(){
+            if(this.status==200){
+               var courses=JSON.parse (this.responseText);
+               console.log(courses[1].courseName);
+            }
+    }
+    //send request
+    xhr.send();
+}
     </script>
 </body>
 </html>
