@@ -41,7 +41,7 @@ app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
 
 // get data from table usrInfo
-app.get('/db', async (req, res) => {
+/*app.get('/db', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -61,9 +61,9 @@ app.get('/db', async (req, res) => {
           console.error(err);
           res.json({ error: err });
           }
-      });
+      });*/
     // get data from table course
-app.get('/db2 ', async (req, res) => {
+app.get('/db ', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -75,9 +75,9 @@ app.get('/db2 ', async (req, res) => {
         })();
     try {
         const client = await pool.connect();
-        const result2 = await client.query('SELECT * FROM courseInfo ;');
-        const results2 = { 'results': (result2) ? result2.rows : null};
-        res.json( results2 );
+        const result = await client.query('SELECT * FROM courseInfo;');
+        const results = { 'results': (result) ? result.rows : null};
+        res.json( results );
         client.release();
     } catch (err) {
           console.error(err);
