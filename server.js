@@ -103,9 +103,8 @@ app.post('/login', async (req, res) => {
   const {Email, Password} = req.body;
   const client = await pool.connect();
   const user = await client.query('SELECT fname,email,userType, password FROM usrInfo WHERE email=$1;',[Email])
-  const loginUser = JSON.parse(user);
-  const loginUserName = loginUser.fname;
-  console.log(loginUserName);
+  const loginUser = (user) ? user.rows : null;
+ 
   // compare the password
   try {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password) ){
