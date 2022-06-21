@@ -41,7 +41,7 @@ app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
 
 // get data from table usrInfo
-app.get('/db', async (req, res) => {
+app.get('/db2', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
