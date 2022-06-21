@@ -62,6 +62,28 @@ app.get('/db', async (req, res) => {
           res.json({ error: err });
           }
       });
+    // get data from table course
+app.get('/courseInfo ', async (req, res) => {
+    const { Pool } = require('pg');
+        const pool = (() => {
+            return new Pool({
+                connectionString: process.env.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            });
+        })();
+    try {
+        const client = await pool.connect();
+        const result = await client.query('SELECT * FROM courseInfo ;');
+        const results = { 'results': (result) ? result.rows : null};
+        res.json( results );
+        client.release();
+    } catch (err) {
+          console.error(err);
+          res.json({ error: err });
+          }
+      });
 
 // submit sign data into database table usrInfo
 app.post('/submit', async (req, res) => {
