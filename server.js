@@ -133,6 +133,7 @@ app.post('/login', async (req, res) => {
       if(await bcrypt.compare(req.body.Password, loginUser[0].password) ){
        
         if (loginUser[0].usertype=="teacher"){
+            localStorage.setItem('name',loginUser[0].fname)
             res.redirect('/teacher_home');
           } 
           else if (loginUser[0].usertype=="student"){
