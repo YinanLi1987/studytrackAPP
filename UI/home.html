@@ -78,7 +78,7 @@
 
 <script>
     document.getElementById("userlogin").addEventListener("click",function(){
-        let userEmail = document.getElementById("email").innerText;
+        let userEmail = document.getElementById("email").innerHTML.value;
         localStorage.setItem("userEmail",userEmail);
     })
     
