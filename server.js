@@ -74,7 +74,8 @@ app.get('/db', async (req, res) => {
             });
         })();
     try {
-        const loginuser=localStorage.getItem('userEmail')
+        const loginuser=localStorage.getItem('userEmail');
+        console.log(loginuser);
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM usrInfo where email=$1;',[loginuser]);
         const results = { 'results': (result) ? result.rows : null};
