@@ -16,7 +16,7 @@
     <div class="userbar">
         <a href="#" id="createCourse">Create a Course</a>
         <a href="#" id="message">Message</a>
-        <a href="#" id="user" > user </a>
+        <a href="#" id="user" > user</a>
     </div>
     <div id="courseList"></div>
     <div id="editInfo">
@@ -82,7 +82,7 @@
     </div>
     <script>
      
-
+          console.log(localStorage.getItem("userEmail"));
         document.getElementById("user").addEventListener("click",function(){
             document.querySelector("#editInfo").style.display="flex";
     });
