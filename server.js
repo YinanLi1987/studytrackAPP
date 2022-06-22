@@ -37,7 +37,9 @@ app.get("/student_course", function(req, res) {
 });
 app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
-
+app.get("/student_course", function(req, res) {
+    res.send(localStorage.getItem("userEmail"));;
+});
 
 // get data from table usrInfo
 app.get('/db2', async (req, res) => {
