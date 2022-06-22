@@ -74,8 +74,9 @@ app.get('/db', async (req, res) => {
             });
         })();
     try {
+        const loginuser=localStorage.getItem('userEmail')
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM usrInfo;');
+        const result = await client.query('SELECT * FROM usrInfo where email=$1;',[loginuser]);
         const results = { 'results': (result) ? result.rows : null};
         res.json( results);
         client.release();
@@ -85,30 +86,7 @@ app.get('/db', async (req, res) => {
           }
       });
 
-      //login user
-      app.get('/loginuser', async (req, res) => {
-        const { Pool } = require('pg');
-            const pool = (() => {
-                return new Pool({
-                    connectionString: process.env.DATABASE_URL,
-                    ssl: {
-                        rejectUnauthorized: false
-                    }
-                });
-            })();
-        try {
-            const localuser=localStorage.getItem('userEmail');
-            console.log(localuser);
-            const client = await pool.connect();
-            const result = await client.query('SELECT * FROM usrInfo where email=$1',[localuser]);
-            const results = (result) ? result.rows : null;
-            res.json( results);
-            client.release();
-        } catch (err) {
-              console.error(err);
-              res.json({ error: err });
-              }
-          });
+      
 // submit sign data into database table usrInfo
 app.post('/submit', async (req, res) => {
         const { Pool } = require('pg');
