@@ -79,8 +79,10 @@
 <script>
     document.getElementById("userlogin").addEventListener("click",function(){
         let userEmail=document.getElementById("email").value;
-        localStorage.setItem("userEmail",userEmail);
+        let loginuser=localStorage.setItem("userEmail",userEmail);
+        console.log(loginuser)
     })
+    
     
     document.getElementById("login").addEventListener("click",function(){
         document.querySelector("#loginPart").style.display="flex";
