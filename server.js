@@ -39,7 +39,7 @@ app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
 app.get("/loginuser", function(req, res) {
     const loginuser=localStorage.getItem('userEmail');
-    res.send(loginuser);
+    res.json(loginuser);
 });
 
 // get data from table usrInfo
