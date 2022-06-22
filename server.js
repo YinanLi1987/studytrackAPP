@@ -37,7 +37,7 @@ app.get("/student_course", function(req, res) {
 });
 app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
-app.get("/student_course", function(req, res) {
+app.get("/loginuser", function(req, res) {
     res.send(localStorage.getItem("userEmail"));;
 });
 
