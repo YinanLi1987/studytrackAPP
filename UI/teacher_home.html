@@ -82,7 +82,7 @@
     </div>
     <script>
      
-          console.log(localStorage.getItem("userEmail"));
+         
         document.getElementById("user").addEventListener("click",function(){
             document.querySelector("#editInfo").style.display="flex";
     });
@@ -99,6 +99,8 @@
 
     
     function loadJason(){
+        let userEmail=localStorage.getItem("userEmail");
+        document.getElementById("user").value=userEmail;
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
