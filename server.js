@@ -38,7 +38,10 @@ app.get("/student_course", function(req, res) {
 app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
 
-
+app.get("/loginuser", function(req, res) {
+    const loginuser=localStorage.getItem('userEmail');
+    console.log(loginuser);
+});
 
 // get data from table usrInfo
 app.get('/db2', async (req, res) => {
@@ -74,10 +77,9 @@ app.get('/db', async (req, res) => {
             });
         })();
     try {
-        const loginuser=localStorage.getItem('userEmail');
-        console.log(loginuser);
+     
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM usrInfo where email=$1;',[loginuser]);
+        const result = await client.query('SELECT * FROM usrInfo');
         const results = { 'results': (result) ? result.rows : null};
         res.json( results);
         client.release();
