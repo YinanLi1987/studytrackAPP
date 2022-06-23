@@ -69,7 +69,7 @@
     </div>
     <div id="students-container">
         <div class="students-list">
-            <form action="/addstudent" method="POST" >
+            <form action="/addstudent" method="POST" id="studentForm">
                 <div id="students"></div>
                 <input type="submit" value="Submit">
                 <input type="button" id="cancel5" value="Cancel">
@@ -108,6 +108,13 @@
             document.querySelector("#create").style.display="none";
     });
 
+    document.getElementsByClassName("addstudent").addEventListener("click",function(){
+            document.querySelector("#students-container").style.display="flex";
+    });
+        document.getElementById("cancel5").addEventListener("click",function(){
+            document.querySelector("#students-container").style.display="none";
+    })
+
         function loadJason(){
         let userEmail=localStorage.getItem("userEmail");
         document.getElementById("user").innerText=userEmail;
@@ -121,7 +128,7 @@
                 var output='';
                 for(var i in courses){
                     output+='<ul>'+
-                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'<button>addstudent</button>'+'</li>'+
+                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'<button class="addstudent">addstudent</button>'+'</li>'+
                         '</ul>';
                 }
                
