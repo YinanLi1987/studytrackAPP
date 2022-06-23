@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body >
+<body onload="loginUser()" onload="loadJason()">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
         </header> 
     </div>
-    <div class="userbar">
+    <div class="userbar" >
         <a href="#" id="createCourse">Create a Course</a>
         <a href="#" id="message">Message</a>
-        <a href="#" id="user" onload="loginUser()"> user</a>
+        <a href="#" id="user" > user</a>
     </div>
     <div id="courseList"></div>
     <div id="editInfo">
