@@ -98,7 +98,7 @@ app.get('/dbstudent', async (req, res) => {
     try {
      
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM usrInfo where usertype=$1;["Student"]');
+        const result = await client.query('SELECT * FROM usrInfo where usertype=$1;',["Student"]);
         const results = (result) ? result.rows : null;
         res.json( results);
         client.release();
