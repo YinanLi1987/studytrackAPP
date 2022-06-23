@@ -108,9 +108,11 @@
             document.querySelector("#create").style.display="none";
     });
 
-    document.getElementsByClassName("addstudent").addEventListener("click",function(){
+    document.getElementsByClassName("addstudent").forEach(function(element){
+        element.addEventListener("click",function(){
             document.querySelector("#students-container").style.display="flex";
     });
+    })
    
         document.getElementById("cancel5").addEventListener("click",function(){
             document.querySelector("#students-container").style.display="none";
