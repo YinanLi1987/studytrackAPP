@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser()">
+<body onload="loginUser();coursesOfStudent();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -54,9 +54,9 @@
                <th>Traffic Light</th>
               
            </tr>
-           <tr >
-               <td></td>
-               <td></td>
+           <tr id="courseList" >
+              
+               
                
            </tr>
            
@@ -97,7 +97,7 @@
                 var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
                 var username=userInfo[userIndex].fname;
                 
-                document.getElementById("user").innerText=username;
+                document.getElementById("courseList").innerText=username;
             }
     }
     //send request
@@ -117,6 +117,7 @@ function coursesOfStudent(){
                 var courseInfo=JSON.parse (this.responseText);    
                 var length = Object.keys(courseInfo).length
                 var courses=[];
+                console.log(courseInfo[0].student[0]);
                 
                 for ( i=0; i <length; i++ ){
                     for( j=0; j < courseInfo[i].student.length; j++){
@@ -131,7 +132,7 @@ function coursesOfStudent(){
                 }
                
               document.getElementById("students").innerHTML=output;
-                document.getElementById("user").innerText=username;
+              
             }
     }
     //send request
