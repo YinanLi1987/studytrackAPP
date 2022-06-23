@@ -97,7 +97,7 @@
                 var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
                 var username=userInfo[userIndex].fname;
                 
-                document.getElementById("courseList").innerText=username;
+                document.getElementById("user").innerText=username;
             }
     }
     //send request
@@ -131,7 +131,7 @@ function coursesOfStudent(){
                     output+='<td>'+courses[i].fname+'</td>';
                 }
                
-              document.getElementById("students").innerHTML=output;
+              document.getElementById("courseList").innerHTML=output;
               
             }
     }
