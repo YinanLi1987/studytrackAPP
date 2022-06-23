@@ -76,7 +76,7 @@ app.get('/db', async (req, res) => {
      
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM usrInfo');
-        const results = { 'results': (result) ? result.rows : null};
+        const results = (result) ? result.rows : null;
         res.json( results);
         client.release();
     } catch (err) {

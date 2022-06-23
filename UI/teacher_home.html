@@ -16,7 +16,7 @@
     <div class="userbar">
         <a href="#" id="createCourse">Create a Course</a>
         <a href="#" id="message">Message</a>
-        <a href="#" id="user" > user</a>
+        <a href="#" id="user" onload="loginUser()" user</a>
     </div>
     <div id="courseList"></div>
     <div id="editInfo">
@@ -99,8 +99,7 @@
 
     
     function loadJason(){
-        let userEmail=localStorage.getItem("userEmail");
-        document.getElementById("user").innerText=userEmail;
+       
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
@@ -134,8 +133,9 @@ function loginUser(){
                 var userInfo=JSON.parse (this.responseText);
                 let userEmail=localStorage.getItem("userEmail");
                 var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
-               
-               console.log(userIndex);
+                var username=userInfo[userIndex].fname;
+                
+               document.getElementById("user").innerText=username;
             }
     }
     //send request
