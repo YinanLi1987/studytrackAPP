@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason();loginUser();"> >
+<body onload="loadJason();loginUser();studentslist();"> >
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -117,7 +117,7 @@
                         '</ul>';
                 }
                
-              document.getElementById("students").innerHTML=output;
+              document.getElementById("courseList").innerHTML=output;
             }
     }
     //send request
