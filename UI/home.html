@@ -77,18 +77,19 @@
     </div>
 
 <script>
-    localStorage.setItem("userEmail",userEmail);
-    document.getElementById("userlogin").addEventListener("click",function(){
-        let userEmail=document.getElementById("email").value;
-        
-      
-        
-    })
+    
+   
     
     
     document.getElementById("login").addEventListener("click",function(){
         document.querySelector("#loginPart").style.display="flex";
     });
+    document.getElementById("userlogin").addEventListener("click",function(){
+        let userEmail=document.getElementById("email").value;
+        
+        localStorage.setItem("userEmail",userEmail);
+        
+    })
     document.getElementById("cancel1").addEventListener("click",function(){
         document.querySelector("#loginPart").style.display="none";
     })
