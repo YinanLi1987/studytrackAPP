@@ -99,7 +99,8 @@
 
     
     function loadJason(){
-       
+        let userEmail=localStorage.getItem("userEmail");
+        document.getElementById("user").innerText=userEmail;
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
@@ -131,11 +132,12 @@ function loginUser(){
         xhr.onload=function(){
             if(this.status==200){
                 var userInfo=JSON.parse (this.responseText);
-                let userEmail=localStorage.getItem("userEmail");
+
+                
                 var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
                 var username=userInfo[userIndex].fname;
                 
-               document.getElementById("user").innerText=username;
+             console.log(username);
             }
     }
     //send request
