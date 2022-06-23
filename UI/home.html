@@ -86,7 +86,7 @@
         
     });
     document.getElementById("userlogin").addEventListener("click",function(){
-        
+        localStorage.removeItem("userEmail");
         let userEmail=document.getElementById("email").value;
         
         localStorage.setItem("userEmail",userEmail);
