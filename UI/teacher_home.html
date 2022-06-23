@@ -108,7 +108,13 @@
             document.querySelector("#create").style.display="none";
     });
 
-    document.getElementsByClassName("addstudent").addEventListener("click",function(){
+    document.getElementsById("addstudent0").addEventListener("click",function(){
+            document.querySelector("#students-container").style.display="flex";
+    });
+    document.getElementsById("addstudent1").addEventListener("click",function(){
+            document.querySelector("#students-container").style.display="flex";
+    });
+    document.getElementsById("addstudent2").addEventListener("click",function(){
             document.querySelector("#students-container").style.display="flex";
     });
         document.getElementById("cancel5").addEventListener("click",function(){
@@ -128,7 +134,7 @@
                 var output='';
                 for(var i in courses){
                     output+='<ul>'+
-                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'<button class="addstudent">addstudent</button>'+'</li>'+
+                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'<button id="addstudent'+[i]+'">addstudent</button>'+'</li>'+
                         '</ul>';
                 }
                
