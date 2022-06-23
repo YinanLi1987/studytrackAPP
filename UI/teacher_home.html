@@ -62,23 +62,13 @@
                <input type="number" id="courses" required name="numberOfLectures">
                <label for="exam">Exam Date</label>
                <input type="date" id="exam" required name="examDate">
+               <div id="students"></div>
                <input type="submit" value="Create">
                <input type="button" id="cancel4" value="Cancel">
             </form>
         </div>
     </div>
-    <div id="students-container">
-        <div class="students-list">
-            <form action="/addstudent" method="POST" id="studentForm">
-                <div id="students"></div>
-                <input type="submit" value="Submit">
-                <input type="button" id="cancel5" value="Cancel">
-               
-            </form>
-        </div>
-        
-
-    </div>
+    
   
     
 
@@ -108,14 +98,7 @@
             document.querySelector("#create").style.display="none";
     });
 
-    document.getElementsByClassName("addstudent")[0].addEventListener("click",function(){
-            document.querySelector("#students-container").style.display="flex";
-    });
     
-   
-        document.getElementById("cancel5").addEventListener("click",function(){
-            document.querySelector("#students-container").style.display="none";
-    })
 
         function loadJason(){
         let userEmail=localStorage.getItem("userEmail");
@@ -130,7 +113,7 @@
                 var output='';
                 for(var i in courses){
                     output+='<ul>'+
-                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'<button class="addstudent">addstudent</button>'+'</li>'+
+                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'</li>'+
                         '</ul>';
                 }
                
