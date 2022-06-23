@@ -114,10 +114,11 @@ function coursesOfStudent(){
         xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
         xhr.onload=function(){
             if(this.status==200){
-                var courseInfo=JSON.parse (this.responseText);     
+                var courseInfo=JSON.parse (this.responseText);    
+                var length = Object.keys(courseInfo).length
                 var courses=[];
                 
-                for ( i=0; i < courseInfo.length; i++ ){
+                for ( i=0; i <length; i++ ){
                     for( j=0; j < courseInfo[i].student.length; j++){
                         if( courseInfo[i].student[j]==userEmail){
                             courses.push(courseInfo[i].coursename);
