@@ -192,9 +192,9 @@ app.post('/login', async (req, res) => {
             });
         })();
       try {
-          const {courseName, courseContent, credits, numberOfLectures,examDate} = req.body;
+          const {courseName, courseContent, credits, numberOfLectures,examDate,students} = req.body;
           const client = await pool.connect();
-          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5)',[courseName, courseContent, credits, numberOfLectures,examDate]);
+          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6)',[courseName, courseContent, credits, numberOfLectures,examDate,students]);
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
           res.redirect('/teacher_home')
