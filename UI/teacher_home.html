@@ -161,7 +161,7 @@ function studentslist(){
                 var studentInfo=JSON.parse (this.responseText);
                 var output='';
                 for(var i in studentInfo){
-                    output+='<input type="checkbox" name="selctedstudent">'+studentInfo[i].fname+studentInfo[i].lname+'</input>';
+                    output+='<input type="checkbox" name="students">'+studentInfo[i].fname+studentInfo[i].lname+'</input>';
                 }
                
               document.getElementById("students").innerHTML=output;
