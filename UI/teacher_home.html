@@ -121,6 +121,31 @@
     //send request
     xhr.send();
 }
+
+// get login user information 
+function loginUser(){
+        
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var userInfo=JSON.parse (this.responseText);
+                let userEmail=localStorage.getItem("userEmail");
+                var loginuser=userInfo.indexof(userEmail);
+               
+               console.log(loginuser);
+            }
+    }
+    //send request
+    xhr.send();
+}
+
+
+
+
+
     </script>
 </body>
 </html>
