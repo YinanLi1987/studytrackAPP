@@ -67,7 +67,14 @@
             </form>
         </div>
     </div>
-    <div id="students">
+    <div id="students-container">
+        <div class="students-list">
+            <form action="/addstudent" method="POST" id="students">
+                <div id="students"></div>
+                <input type="submit" value="Save">
+                <input type="button" id="cancel5" value="Cancel">
+            </form>
+        </div>
         
 
     </div>
@@ -160,9 +167,7 @@ function studentslist(){
                 var studentInfo=JSON.parse (this.responseText);
                 var output='';
                 for(var i in studentInfo){
-                    output+='<ul>'+
-                        '<li>'+'<input type="checkbox">'+studentInfo[i].fname+studentInfo[i].lname+'</input>'+'</li>'+
-                        '</ul>';
+                    output+='<input type="checkbox">'+studentInfo[i].fname+studentInfo[i].lname+'</input>';
                 }
                
               document.getElementById("students").innerHTML=output;
