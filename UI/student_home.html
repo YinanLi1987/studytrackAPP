@@ -99,12 +99,34 @@
     
 
     <script>
+           
             document.getElementById("user").addEventListener("click",function(){
             document.querySelector("#editInfo").style.display="flex";
     });
         document.getElementById("cancel3").addEventListener("click",function(){
             document.querySelector("#editInfo").style.display="none";
     })
+// show login user name
+    function loginUser(){
+    let userEmail=localStorage.getItem("userEmail");
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var userInfo=JSON.parse (this.responseText);
+
+                
+                var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
+                var username=userInfo[userIndex].fname;
+                
+                document.getElementById("user").innerText=username;
+            }
+    }
+    //send request
+    xhr.send();
+}
     </script>
 </body>
 </html>
