@@ -137,7 +137,7 @@ function loginUser(){
                 var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
                 var username=userInfo[userIndex].fname;
                 
-             console.log(username);
+                document.getElementById("user").innerText=username;
             }
     }
     //send request
