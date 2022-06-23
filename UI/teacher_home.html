@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason()">
+<body onload="loginUser()">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -16,7 +16,7 @@
     <div class="userbar">
         <a href="#" id="createCourse">Create a Course</a>
         <a href="#" id="message">Message</a>
-        <a href="#" id="user" onload="loginUser()"> user</a>
+        <a href="#" id="user" > user</a>
     </div>
     <div id="courseList"></div>
     <div id="editInfo">
@@ -98,7 +98,7 @@
     });
 
     
-    function loadJason(){
+    /*function loadJason(){
         let userEmail=localStorage.getItem("userEmail");
         document.getElementById("user").innerText=userEmail;
         //create XHR Object
@@ -121,10 +121,10 @@
     //send request
     xhr.send();
 }
-
+*/
 // get login user information 
 function loginUser(){
-        
+    let userEmail=localStorage.getItem("userEmail");
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
