@@ -22,3 +22,5 @@ CREATE TABLE courseInfo (
     examDate VARCHAR(255) NOT NULL,
     PRIMARY KEY (courseId)
 );
+ALTER TABLE courseInfo
+ADD COLUMN students varchar ;
