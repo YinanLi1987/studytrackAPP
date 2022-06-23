@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason();loginUser();studentslist();"> >
+<body onload="loadJason();loginUser();studentslist();"> 
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -69,10 +69,11 @@
     </div>
     <div id="students-container">
         <div class="students-list">
-            <form action="/addstudent" method="POST" id="students">
+            <form action="/addstudent" method="POST" >
                 <div id="students"></div>
-                <button type="submit" value="Save">Save</button>
-                <button type="button" id="cancel5" value="Cancel5">Cancel</button>
+                <input type="submit" value="Submit">
+                <input type="button" id="cancel5" value="Cancel">
+               
             </form>
         </div>
         
