@@ -136,7 +136,8 @@ function trafficLightControl(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
-        element.addEventListener("click", e => {
+       element.addEventListener("click",function(){
+   
             element.style.color = 'red';
         })
     }
