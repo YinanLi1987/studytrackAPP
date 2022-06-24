@@ -8,14 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
-    <button class="light"></button>
+    <button class="light">1</button>
+    <button class="light">2</button>
+    <button class="light">3</button>
+    <button class="light">4</button>
+    <button class="light">5</button>
+    <button class="light">6</button>
+    <button class="light">7</button>
+    <button class="light">8</button>
+
+
+
+    <script>
+       
+    const elements = document.getElementsByClassName('light');
+    
+    for (const element of elements) {
+       element.addEventListener("click",function(){
+   
+            element.style.color = 'red';
+        })
+    }
+
+    </script>
 </body>
+
 </html>
 
