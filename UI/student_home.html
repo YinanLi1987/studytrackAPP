@@ -136,7 +136,7 @@ function courseOfStudent(){
 
 const elements = document.getElementsByClassName('trafficLight');
     
-    for (const element of elements) {
+    for (var element in elements) {
        element.addEventListener("click",function(){
    
             element.style.backgroundColor = 'red';
