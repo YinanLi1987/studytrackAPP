@@ -106,7 +106,31 @@
 
 // show how many courses this student have taken   
 
-
+function courseOfStudent(){
+    let userEmail=localStorage.getItem("userEmail");
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var courseInfo=JSON.parse (this.responseText);
+                output='';
+                for(var i in courseInfo){
+                    if(courseInfo[i].students.includes(userEmail)==true){
+                        output+='<ul>'+
+                        '<li> COURSE:'+courseInfo[i].coursename+'</li>'+
+                        '</ul>';
+                       }
+                }
+                document.getElementById("courseList").innerHTML=output;
+               
+               
+            }
+    }
+    //send request
+    xhr.send();
+}
     </script>
 </body>
 </html>
