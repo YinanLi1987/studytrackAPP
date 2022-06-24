@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser();courseOfStudent();trafficLightControl()">
+<body onload="loginUser();courseOfStudent();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -133,7 +133,7 @@ function courseOfStudent(){
 }
 
 // traffic light control
-function trafficLightControl(){
+
 const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
@@ -142,7 +142,7 @@ const elements = document.getElementsByClassName('trafficLight');
             element.style.backgroundColor = 'red';
         })
     }
-}
+
 
 
     </script>
