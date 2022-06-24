@@ -111,7 +111,7 @@ function courseOfStudent(){
                 output='';
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
-                        output+='<ul>'+'<li>'+
+                        output+=
                         courseInfo[i].coursename+'<button  class="trafficLight">WEEK 1</button>'
                         +'<button  class="trafficLight">WEEK 2</button>'
                         +'<button  class="trafficLight">WEEK 3</button>'
@@ -119,8 +119,7 @@ function courseOfStudent(){
                         +'<button  class="trafficLight">WEEK 5</button>'
                         +'<button  class="trafficLight">WEEK 6</button>'
                         +'<button  class="trafficLight">WEEK 7</button>'
-                        +'<button  class="trafficLight">WEEK 8</button>'+
-                        '</li>'+'</ul>';
+                        +'<button  class="trafficLight">WEEK 8</button>';
                        }
                 }
                 document.getElementById("courseList").innerHTML=output;
