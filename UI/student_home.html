@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser();coursesOfStudent();">
+<body onload="loginUser();courseOfStudent();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -54,11 +54,10 @@
                <th>Traffic Light</th>
               
            </tr>
-           <tr id="courseList" >
-              
-               
-               
-           </tr>
+           <div id="courseList">
+
+           </div>
+           
            
         </table>
     </div>
@@ -118,9 +117,9 @@ function courseOfStudent(){
                 output='';
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
-                        output+='<ul>'+
-                        '<li> COURSE:'+courseInfo[i].coursename+'</li>'+
-                        '</ul>';
+                        output+='<tr>'+'<td>'+
+                        courseInfo[i].coursename+
+                        '</td>'+'</tr>';
                        }
                 }
                 document.getElementById("courseList").innerHTML=output;

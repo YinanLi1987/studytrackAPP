@@ -21,14 +21,11 @@ let data =[
     "examdate":"2022-06-26",
     "students":["liyinan001@gmail.com","liyinan002@gmail.com"]}
 ]
-let result=data[0];
-let result2=data[0].students;
-//let result3=data[0].students[0];
-let result4=data[2].students[1];
 
-let result5=data[2].students[1];
-console.log(result);
-console.log(result2);
-//console.log(result3);
-console.log(result4);
-console.log(result5);
+function getCourse(){
+for(var i in data){
+    if(data[i].students.includes("liyinan002@gmail.com")==true){
+       return data[i].cousename;
+       }
+}};
+getCourse();
