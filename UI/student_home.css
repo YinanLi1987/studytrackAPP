@@ -59,19 +59,13 @@ header{
     border: 1px solid #00BFB2;
 }
 
-table{
-    display: block;
-    margin:50px;  
-    border-spacing:5px;
-    border:#00BFB2 solid 1px;
-}
-table tr th{
-  background-color: rgba(0,191,178,0.5);
-  color:white;
-  font-size: 20px; 
-  
-}
 
+.light{ 
+    height:25px; 
+    width:50px;
+    color:white;
+    border:1px solid black;
+ } 
 
 
 footer{ 
