@@ -131,6 +131,18 @@ function courseOfStudent(){
     //send request
     xhr.send();
 }
+
+function trafficLightControl(){
+    const elements = document.getElementsByClassName('trafficLight');
+    
+    for (const element of elements) {
+        element.addEventListener("click", e => {
+            element.style.color = 'red';
+        })
+    }
+}
+
+
     </script>
 </body>
 </html>
