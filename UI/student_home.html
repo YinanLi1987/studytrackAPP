@@ -132,16 +132,12 @@ function courseOfStudent(){
 }
 
 // traffic light control
-function trafficLight(){
-
-                const elements = document.getElementsByClassName('trafficLight');
-    
-    for (var i in elements) {
-       elements[i].addEventListener("click",function(){
-   
-            elements[i].style.backgroundColor = 'red';
-        })
-    }
+function trafficLight(e){     
+       e.currentTarget.style.backgroundColor = 'red';
+        }
+var buttons=document.getElementsByClassName('trafficLight');
+for(var i=0;i<buttons.length;i++){  
+    buttons[i].addEventListener('click', trafficLight, false);
 
 }
 
