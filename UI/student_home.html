@@ -139,11 +139,25 @@ function trafficLight(){
     
     for (const element of elements) {
        element.addEventListener("click",function(){
-   
-            element.style.backgroundColor = 'red';
-        })
+            switch (element.style.backgroundColor) {
+                case 'white':
+                    element.style.backgroundColor = 'red';
+                    break;
+                case 'red':
+                    element.style.backgroundColor = 'yellow';
+                    break;
+                case 'yellow':
+                    element.style.backgroundColor = 'green';
+                    break;
+                default:
+                element.style.backgroundColor = 'white';
+
+            }
+            })
+            
+        }
     }
-}
+
 
     </script>
 </body>
