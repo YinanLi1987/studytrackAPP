@@ -113,7 +113,7 @@ function courseOfStudent(){
                     if(courseInfo[i].students.includes(userEmail)==true){
                         output+='<ul>'+'<li>'+
                         courseInfo[i].coursename
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 1</button>'
+                        +'<button  class="trafficLight" >WEEK 1</button>'
                         +'<button  class="trafficLight" >WEEK 2</button>'
                         +'<button  class="trafficLight" >WEEK 3</button>'
                         +'<button  class="trafficLight" >WEEK 4</button>'
@@ -149,7 +149,7 @@ function trafficLight(){
                 case 'yellow':
                     element.style.backgroundColor = 'green';
                     break;
-                case 'red':
+                case 'green':
                     element.style.backgroundColor = 'white';
                     break;
                 default:
