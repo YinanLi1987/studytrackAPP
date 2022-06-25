@@ -136,10 +136,10 @@ function courseOfStudent(){
 
 const elements = document.getElementsByClassName('trafficLight');
     
-    for (var element in elements) {
-       element.addEventListener("click",function(){
+    for (var i in elements) {
+       elements[i].addEventListener("click",function(){
    
-            element.style.backgroundColor = 'red';
+            element[i].style.backgroundColor = 'red';
         })
     }
 
