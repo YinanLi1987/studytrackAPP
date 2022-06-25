@@ -112,26 +112,18 @@ function courseOfStudent(){
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
                         output+='<ul>'+'<li>'+
-                        courseInfo[i].coursename+'<button  class="trafficLight">WEEK 1</button>'
-                        +'<button  class="trafficLight">WEEK 2</button>'
-                        +'<button  class="trafficLight">WEEK 3</button>'
-                        +'<button  class="trafficLight">WEEK 4</button>'
-                        +'<button  class="trafficLight">WEEK 5</button>'
-                        +'<button  class="trafficLight">WEEK 6</button>'
-                        +'<button  class="trafficLight">WEEK 7</button>'
-                        +'<button  class="trafficLight">WEEK 8</button>'+
+                        courseInfo[i].coursename+'<button  class="trafficLight" onclick=" trafficLight()">WEEK 1</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 2</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 3</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 4</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 5</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 6</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 7</button>'
+                        +'<button  class="trafficLight" onclick=" trafficLight()">WEEK 8</button>'+
                         '</li>'+'</ul>';
                        }
                 }
-                document.getElementById("courseList").innerHTML=output;
-                const elements = document.getElementsByClassName('trafficLight');
-    
-    for (var i in elements) {
-       elements[i].addEventListener("click",function(){
-   
-            elements[i].style.backgroundColor = 'red';
-        })
-    }
+               
                
                
             }
@@ -141,10 +133,18 @@ function courseOfStudent(){
 }
 
 // traffic light control
+function trafficLight(){
+document.getElementById("courseList").innerHTML=output;
+                const elements = document.getElementsByClassName('trafficLight');
+    
+    for (var i in elements) {
+       elements[i].addEventListener("click",function(){
+   
+            elements[i].style.backgroundColor = 'red';
+        })
+    }
 
-
-
-
+}
 
     </script>
 </body>
