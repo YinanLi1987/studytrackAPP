@@ -124,6 +124,14 @@ function courseOfStudent(){
                        }
                 }
                 document.getElementById("courseList").innerHTML=output;
+                const elements = document.getElementsByClassName('trafficLight');
+    
+    for (var i in elements) {
+       elements[i].addEventListener("click",function(){
+   
+            elements[i].style.backgroundColor = 'red';
+        })
+    }
                
                
             }
@@ -134,14 +142,7 @@ function courseOfStudent(){
 
 // traffic light control
 
-const elements = document.getElementsByClassName('trafficLight');
-    
-    for (var i in elements) {
-       elements[i].addEventListener("click",function(){
-   
-            elements[i].style.backgroundColor = 'red';
-        })
-    }
+
 
 
 
