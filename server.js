@@ -192,9 +192,9 @@ app.post('/login', async (req, res) => {
             });
         })();
       try {
-          const {courseName, courseContent, credits, numberOfLectures,examDate,students} = req.body;
+          const {courseName, lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,students} = req.body;
           const client = await pool.connect();
-          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6)',[courseName, courseContent, credits, numberOfLectures,examDate,students]);
+          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10)',[courseName, lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,students]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
