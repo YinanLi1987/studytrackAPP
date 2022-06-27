@@ -49,9 +49,7 @@
     </div>
   
         
-           <div id="courseList">
-
-           </div>
+           <form id="courseList"></form>
            
            
         
@@ -111,20 +109,19 @@ function courseOfStudent(){
                 output='';
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
-                        output+='<ul>'+'<li>'+
+                        output+=
                         courseInfo[i].coursename+'<br />'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson01+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson02+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson03+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson04+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson05+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson06+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson07+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson08+'</button>'+
-                        '</li>'+'</ul>';
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson01+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson02+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson03+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson04+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson05+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson06+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson07+'</input>'
+                        +'<input type="button"  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson08+'</input>';
                        }
                 }
-                document.getElementById("courseList").innerHTML=output;
+                document.getElementById("courseList").innerHTML=output+'<input type="submit">OK</input>';
                 const elements = document.getElementsByClassName('trafficLight');
                 const today = new Date().toISOString().slice(0, 10);
                 let  unmarked=Number(0);
