@@ -170,7 +170,7 @@ function sendReminder(){
 
     for (const element of lessonDates) {
         if (element.style.backgroundColor=='white'&& element.innerText<today) {
-            document.getElementById("message").innerText=' <img src="img/envelope-exclamation.svg"  alt="">'
+            document.getElementById("message").outerHTML=' <img src="img/envelope-exclamation.svg"  alt="">'
         }
     }
 }
