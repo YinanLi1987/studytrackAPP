@@ -167,7 +167,8 @@ function trafficLight(){
 // send message to reminder
 function sendReminder(){
     const elements = document.getElementsByClassName('trafficLight');
-    const today = new Date().toISOString().slice(0, 10)
+    const today = new Date().toISOString().slice(0, 10);
+    console.log('ok')
     
     for (const element of elements) {
         if(element.style.backgroundColor='white'){
