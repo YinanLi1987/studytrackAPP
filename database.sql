@@ -16,11 +16,21 @@ CREATE TABLE usrInfo (
 CREATE TABLE courseInfo (
     courseId SERIAL,
     courseName VARCHAR(255) NOT NULL,
-	courseContent VARCHAR(255) NOT NULL,
-    credits INTEGER NOT NULL,
-	numberOfLectures INTEGER NOT NULL,
-    examDate VARCHAR(255) NOT NULL,
     PRIMARY KEY (courseId)
 );
 ALTER TABLE courseInfo
 ADD COLUMN students varchar ;
+ALTER TABLE courseInfo
+add COLUmn lesson02 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson03 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson04 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson05 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson06 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson07 varchar;
+ALTER TABLE courseInfo
+add COLUmn lesson08 varch;
