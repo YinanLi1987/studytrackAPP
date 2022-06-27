@@ -167,7 +167,7 @@ function trafficLight(){
 function sendReminder(){
     let lessonDates=document.getElementsByClassName('trafficLight');
     let today = new Date().toISOString().slice(0, 10)
-
+    console.log(today)
 
     for (const element of lessonDates) {
         console.log(element.style.backgroundColor)
