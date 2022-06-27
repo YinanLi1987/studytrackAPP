@@ -140,7 +140,7 @@ function trafficLight(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
-        console.log(element.style.backgroundColor)
+       
        element.addEventListener("click",function(){
             switch (element.style.backgroundColor) {
                 case 'white':
@@ -165,17 +165,19 @@ function trafficLight(){
         }
     }
 // send message to reminder
-/*function sendReminder(){
+function sendReminder(){
     const elements = document.getElementsByClassName('trafficLight');
+    const today = new Date().toISOString().slice(0, 10)
     
     for (const element of elements) {
-      
-                   console.log(element.innerHTML);
+        if(element.style.backgroundColor='white'&&element.innerHTML<today){
+
+        document.getElementById("message").innerHTML='  <img src="UI/img/envelope-exclamation.svg" alt="">'
                 
 
             }
             
-}*/
+}}
 
     </script>
 </body>
