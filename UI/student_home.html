@@ -15,7 +15,9 @@
     </div>
     <div class="userbar">
       
-        <i class="bi bi-envelope"></i>
+        <a href="#" id="message" >
+            <img src="img/envelope-check.svg" alt="">
+        </a>
         <a href="#" id="user">User name</a>
     </div>
     <div id="editInfo">
@@ -166,7 +168,7 @@ function sendReminder(){
     let lessonDates=document.getElementsByClassName('trafficLight');
     for (const element of lessonDates) {
         if (element.style.backgroundColor=='white'&& element.innerText>new Date()) {
-            document.getElementById("message").innerText='<i class="bi bi-envelope-exclamation"></i>'
+            document.getElementById("message").innerText=' <img src="img/envelope-exclamation.svg"  alt="">'
         }
     }
 }
