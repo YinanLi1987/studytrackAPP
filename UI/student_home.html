@@ -112,15 +112,15 @@ function courseOfStudent(){
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
                         output+='<ul>'+'<li>'+
-                        courseInfo[i].coursename
+                        courseInfo[i].coursename+'<br>'+
                         +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson01+'</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 2</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 3</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 4</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 5</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 6</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 7</button>'
-                        +'<button  class="trafficLight" onclick="trafficLight()">WEEK 8</button>'+
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson02+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson03+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson04+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson05+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson06+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson07+'</button>'
+                        +'<button  class="trafficLight" onclick="trafficLight()">'+courseInfo[i].lesson08+'</button>'+
                         '</li>'+'</ul>';
                        }
                 }
