@@ -166,8 +166,10 @@ function trafficLight(){
 // send message to reminder
 function sendReminder(){
     let lessonDates=document.getElementsByClassName('trafficLight');
+    let today = new Date().toISOString().slice(0, 10)
+
     for (const element of lessonDates) {
-        if (element.style.backgroundColor=='white'&& element.innerText>new Date()) {
+        if (element.style.backgroundColor=='white'&& element.innerText<today) {
             document.getElementById("message").innerText=' <img src="img/envelope-exclamation.svg"  alt="">'
         }
     }
