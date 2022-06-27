@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser();courseOfStudent();sendReminder();">
+<body onload="loginUser();courseOfStudent();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -140,7 +140,7 @@ function trafficLight(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
-       
+       console.log(element)
        element.addEventListener("click",function(){
             switch (element.style.backgroundColor) {
                 case 'white':
@@ -154,31 +154,14 @@ function trafficLight(){
                     break;
                default:
                     element.style.backgroundColor = 'white';
-                    break;
-           
-                   
-                
-
+                    break;                  
             }
-            })
+        })
             
-        }
     }
+}
 // send message to reminder
-function sendReminder(){
-    const elements = document.getElementsByClassName('trafficLight');
-    const today = new Date().toISOString().slice(0, 10);
-    console.log('ok')
-    
-    for (const element of elements) {
-        if(element.style.backgroundColor='white'){
 
-       console.log('ok')
-                
-
-            }
-            
-}}
 
     </script>
 </body>
