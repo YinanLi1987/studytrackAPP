@@ -138,9 +138,9 @@ function courseOfStudent(){
 function trafficLight(){     
       
     const elements = document.getElementsByClassName('trafficLight');
-    
+    console.log(elements[0])
     for (const element of elements) {
-       console.log(element)
+     
        element.addEventListener("click",function(){
             switch (element.style.backgroundColor) {
                 case 'white':
