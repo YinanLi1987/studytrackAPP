@@ -15,11 +15,7 @@
     </div>
     <div class="userbar">
       
-        <a href="#" id="message" >
-            <img src="img/envelope-check.svg" alt="">
-            
-           
-        </a>
+        <p id="message"></p>
         <a href="#" id="user">User name</a>
     </div>
     <div id="editInfo">
@@ -139,9 +135,16 @@ function courseOfStudent(){
                     }
                    
                 }
-                document.getElementById("message").innerHTML='<img src="img/envelope-exclamation.svg" alt="">'
-              
-                console.log(unmarked);
+                if (unmarked==0) {
+                    document.getElementById("message").innerText='You have'+unmarked+'traffic light to mark.'
+                    document.getElementById("message").style.color='black';
+
+                }else {
+                    document.getElementById("message").innerText='You have'+unmarked+'traffic lights to mark!'
+                    document.getElementById("message").style.color='red';
+
+                }
+                
             }
     }
     //send request
