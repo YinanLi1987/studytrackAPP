@@ -132,6 +132,7 @@ function courseOfStudent(){
                 const today = new Date().toISOString().slice(0, 10)
                 console.log(elements[0].innerHTML);
                 for (const element of elements) {
+                    console.log(element.innerHTML);
                     if (element.style.backgroundColor=='white' && element.innerHTML<today) {
                         document.getElementById("message").innerHTML=' <img src="img/envelope-exclamation.svg" alt="">'
                     }
