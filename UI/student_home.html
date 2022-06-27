@@ -165,10 +165,10 @@ function trafficLight(){
     }
 // send message to reminder
 function sendReminder(){
-    let lessonDates=document.getElementsByClassName('trafficLight')[0].innerHTML;
+    let lessonDates=document.getElementsByClassName('trafficLight').innerHTML;
     let today = new Date().toISOString().slice(0, 10)
     console.log(today)
-    console.log(lessonDates)
+    console.log(lessonDates[0])
   
 
     for (const element of lessonDates) {
