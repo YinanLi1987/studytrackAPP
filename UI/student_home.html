@@ -140,7 +140,7 @@ function trafficLight(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
-        console.log(element.innerHTML)
+        console.log(element[0].innerHTML)
        element.addEventListener("click",function(){
             switch (element.style.backgroundColor) {
                 case 'white':
