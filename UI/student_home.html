@@ -140,6 +140,7 @@ function trafficLight(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
+        console.log(element.innerHTML)
        element.addEventListener("click",function(){
             switch (element.style.backgroundColor) {
                 case 'white':
@@ -164,7 +165,7 @@ function trafficLight(){
         }
     }
 // send message to reminder
-function sendReminder(){
+/*function sendReminder(){
     const elements = document.getElementsByClassName('trafficLight');
     
     for (const element of elements) {
@@ -174,7 +175,7 @@ function sendReminder(){
 
             }
             
-}
+}*/
 
     </script>
 </body>
