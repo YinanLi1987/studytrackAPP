@@ -15,7 +15,7 @@
     </div>
     <div class="userbar">
       
-        <a href="#" id="message">Message</a>
+        <a href="#" id="message" ><i class="bi bi-envelope"></i></a>
         <a href="#" id="user">User name</a>
     </div>
     <div id="editInfo">
@@ -125,7 +125,7 @@ function courseOfStudent(){
                        }
                 }
                 document.getElementById("courseList").innerHTML=output;
-               
+                
             }
     }
     //send request
@@ -161,7 +161,15 @@ function trafficLight(){
             
         }
     }
-
+// send message to reminder
+function sendReminder(){
+    let lessonDates=document.getElementsByClassName('trafficLight');
+    for (const element of lessonDates) {
+        if (element.style.backgroundColor=='white'&& element.innerText>new Date()) {
+            document.getElementById("message").innerText='<i class="bi bi-envelope-exclamation"></i>'
+        }
+    }
+}
 
     </script>
 </body>
