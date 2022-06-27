@@ -131,10 +131,9 @@ function courseOfStudent(){
                 const elements = document.getElementsByClassName('trafficLight');
                 const today = new Date().toISOString().slice(0, 10);
                 const unmarked=Number(0);
-                console.log(elements[0].innerHTML);
                 for (const element of elements) {
                     console.log(element.innerHTML);
-                    if (element.style.backgroundColor=='white' && element.innerHTML<today) {
+                    if (element.style.backgroundColor='white' && element.innerHTML<today) {
                         unmarked +=1;
                     }
                     console.log(unmarked);
