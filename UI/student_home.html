@@ -162,11 +162,8 @@ function trafficLight(){
 // send message to reminder
 function sendReminder(){
     const elements = document.getElementsByClassName('trafficLight');
-    for (const element of elements) {
-        element.addEventListener("onload",function(){
-            console.log(element.innerHTML);
-        })
-    }
+   let a=elements[0];
+   console.log(a);
 
 }
 
