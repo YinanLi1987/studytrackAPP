@@ -194,7 +194,7 @@ app.post('/login', async (req, res) => {
       try {
           const {courseName, lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,students} = req.body;
           const client = await pool.connect();
-          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10)',[courseName, lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,students]);
+          client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10)',[courseName, students,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
