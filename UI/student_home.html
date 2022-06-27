@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser();courseOfStudent(); sendReminder();">
+<body onload="loginUser();courseOfStudent();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -127,6 +127,8 @@ function courseOfStudent(){
                        }
                 }
                 document.getElementById("courseList").innerHTML=output;
+                const elements = document.getElementsByClassName('trafficLight');
+                console.log(elements[0].innerHTML);
                 
             }
     }
@@ -159,13 +161,7 @@ function trafficLight(){
             
     }
 }
-// send message to reminder
-function sendReminder(){
-    const elements = document.getElementsByClassName('trafficLight');
-   let a=elements[0].innerText;
-   console.log(a);
 
-}
 
     </script>
 </body>
