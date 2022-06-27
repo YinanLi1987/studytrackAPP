@@ -129,13 +129,15 @@ function courseOfStudent(){
                 }
                 document.getElementById("courseList").innerHTML=output;
                 const elements = document.getElementsByClassName('trafficLight');
-                const today = new Date().toISOString().slice(0, 10)
+                const today = new Date().toISOString().slice(0, 10);
+                const unmarked=Number(0);
                 console.log(elements[0].innerHTML);
                 for (const element of elements) {
                     console.log(element.innerHTML);
                     if (element.style.backgroundColor=='white' && element.innerHTML<today) {
-                        document.getElementById("message").innerHTML=' <img src="img/envelope-exclamation.svg" alt="">'
+                        unmarked +=1;
                     }
+                    console.log(unmarked);
                 }
                 
             }
