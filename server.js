@@ -224,7 +224,7 @@ app.post('/login', async (req, res) => {
           const {studentEmail, courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
        
           const client = await pool.connect();
-          client.query('UPDATE trafficLight SET lesson01=$3, lesson02=$4, lesson03=$5, lesson04=$6, lesson05=$7, lesson06=$8, lesson07=$9, lesson08=$10, lesson09=$11) WHERE studentEmail=$1 AND courseName=$2 ',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
+          client.query('UPDATE trafficLight SET lesson01=$3, lesson02=$4, lesson03=$5, lesson04=$6, lesson05=$7, lesson06=$8, lesson07=$9, lesson08=$10, lesson09=$11 WHERE studentEmail=$1 AND courseName=$2 ',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
