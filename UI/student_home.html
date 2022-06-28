@@ -102,18 +102,18 @@ function courseOfStudent(){
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
-        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db3', true);
         xhr.onload=function(){
             if(this.status==200){
                 var courseInfo=JSON.parse (this.responseText);
                 output='';
-                for(var i in courseInfo){
-                    if(courseInfo[i].students.includes(userEmail)==true){
+                for(var i in trafficLight){
+                    if(trafficLight[i].studentemail==userEmail){
                         output+='<form action="/confirm" method="POST">'
                         +'<input type="hidden" name="studentEmail" value="'+userEmail+'" >'    
-                        +'<input name=courseName value="'+courseInfo[i].coursename+'"></input>'+'<br />'+'<br />'
-                        +'<lable for='+courseInfo[i].lesson01+'>'+courseInfo[i].lesson01+'</lable>'
-                        +'<select type="text" class="trafficLight" id='+courseInfo[i].lesson01+' name="lesson01" style="background-color:white">'
+                        +'<input name=courseName value="'+trafficLight[i].coursename+'"></input>'+'<br />'+'<br />'
+                        +'<lable for='+traffic[i].date01+'>'+traffic[i].date01+'</lable>'
+                        +'<select type="text" class="trafficLight" id='+traffic[i].date011+' name="lesson01" style="background-color:white">'
                             +'<option value="Unmark">Unmark</option>'
                             +'<option value="green">Good</option>'
                             +'<option value="yellow">Have some problems</option>'
