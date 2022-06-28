@@ -223,7 +223,7 @@ app.post('/login', async (req, res) => {
           const studentEmail='liyinan002@gmail.com';
           const courseName='005JAVA';
           const client = await pool.connect();
-          client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) WHERE email=$10',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
+          client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10) ',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
