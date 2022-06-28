@@ -84,6 +84,29 @@ app.get('/db', async (req, res) => {
           res.json({ error: err });
           }
       });
+//get all data of traffic light
+// get data from table usrInfo
+app.get('/db3', async (req, res) => {
+    const { Pool } = require('pg');
+        const pool = (() => {
+            return new Pool({
+                connectionString: process.env.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            });
+        })();
+    try {
+        const client = await pool.connect();
+        const result = await client.query('SELECT * FROM trafficLight;');
+        const results =  (result) ? result.rows : null;
+        res.json( results );
+        client.release();
+    } catch (err) {
+          console.error(err);
+          res.json({ error: err });
+          }
+      });
 // get all students fname and lname 
 app.get('/dbstudent', async (req, res) => {
     const { Pool } = require('pg');
