@@ -226,7 +226,7 @@ app.post('/login', async (req, res) => {
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
-          res.redirect('/teacher_home')
+          res.redirect('/student_home')
           client.release();
       } catch (err) {
             console.error(err);
