@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="student_home.css">
     <title>Document</title>
 </head>
-<body onload="loginUser();courseOfStudent();">
+<body onload="loginUser();courseOfStudent();trafficLight();">
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -112,9 +112,9 @@ function courseOfStudent(){
                         output+=
                         courseInfo[i].coursename+'<br />'+'<br />'
                         +'<lable for='+courseInfo[i].lesson01+'>Lesson 01</lable>'
-                        +'<select type="text" class="trafficLight" id='+courseInfo[i].lesson01+' placeholder="How is your study" name="course'+[i+1]+'" style="background-color:white">'
-                           +'<option value="green" style="background-color:green"></option>'
-                           +'<option value="yellow" ></option>'
+                        +'<select type="text" class="trafficLight" id='+courseInfo[i].lesson01+' name="course'+[i+1]+'" style="background-color:white">'
+                           +'<option value="green"></option>'
+                           +'<option value="yellow"></option>'
                            +'<option value="red" ></option>'
                         +'</select>'
 
@@ -161,28 +161,27 @@ function trafficLight(){
       
     const elements = document.getElementsByClassName('trafficLight');
     for (const element of elements) {
-     
-       element.addEventListener("click",function(){
-            switch (element.style.backgroundColor) {
-                case 'white':
-                    element.style.backgroundColor = 'red';
-                    break;
-                case 'red':
-                    element.style.backgroundColor = 'yellow';
+        let color = element.value; 
+       
+            switch (color) {
+                case 'green':
+                    element.style.backgroundColor = 'green';
                     break;
                 case 'yellow':
-                    element.style.backgroundColor = 'green';
+                    element.style.backgroundColor = 'yellow';
+                    break;
+                case 'red':
+                    element.style.backgroundColor = 'red';
                     break;
                default:
                     element.style.backgroundColor = 'white';
                     break;                  
             }
-            elementColor=element.style.backgroundColor;
-            element.name=elementColor; 
-        })
+           
+        }
             
     }
-}
+
 
 
     </script>
