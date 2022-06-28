@@ -109,8 +109,8 @@ function courseOfStudent(){
                 output='';
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
-                        output+=
-                        courseInfo[i].coursename+'<br />'+'<br />'
+                        output+='<form action="/confirm" method="POST">'
+                        +courseInfo[i].coursename+'<br />'+'<br />'
                         +'<lable for='+courseInfo[i].lesson01+'>'+courseInfo[i].lesson01+'</lable>'
                         +'<select type="text" class="trafficLight" id='+courseInfo[i].lesson01+' name="lesson01" style="background-color:white">'
                            +'<option value="green">Good</option>'
@@ -167,11 +167,13 @@ function courseOfStudent(){
                            +'<option value="yellow">Have some problems</option>'
                            +'<option value="red" >Have serious problems</option>'
                         +'</select>'  
-                        +'<br />'+'<br />'+'<br />';
+                        +'<br />'+'<br />'+'<br />'
+                        +'<input type="submit" value="Confirm"></input>'+'</form>'
+                        ;
                        }
                 }
                
-                document.getElementById("courseList").innerHTML=' <form id="courseList" action="/confirm" method="POST">'+output+'<br />'+'<input type="submit" value="Confirm"></input>'+'</form>';
+                document.getElementById("courseList").innerHTML=output;
                 
         //get notification for marking the light
                 const elements = document.getElementsByClassName('trafficLight');
