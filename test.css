@@ -10,3 +10,12 @@ body{
    border:1px solid black;
    background-color:aquamarine
 } 
+#one {
+    background-color: red;
+}
+#two {
+    background-color: yellow;
+}
+#three {
+    background-color: green;
+}
