@@ -208,7 +208,7 @@ app.post('/login', async (req, res) => {
 
 // confirm the status of traffic light
 
-    app.post('/confirm', async (req, res) => {
+    /*app.post('/confirm', async (req, res) => {
         const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -233,8 +233,8 @@ app.post('/login', async (req, res) => {
             console.error(err);
             res.json({ error: err });
         }
-      });
-*/
+      });*/
+
 
 
 
