@@ -49,7 +49,7 @@
     </div>
   
         
-           <form id="courseList" action="/confirm" method="POST"></form>
+           <div id="courseList" ></div>
            
            
         
@@ -171,7 +171,7 @@ function courseOfStudent(){
                        }
                 }
                
-                document.getElementById("courseList").innerHTML=output+'<br />'+'<input type="submit" value="Confirm"></input>';
+                document.getElementById("courseList").innerHTML=' <form id="courseList" action="/confirm" method="POST">'+output+'<br />'+'<input type="submit" value="Confirm"></input>'+'</form>';
                 
         //get notification for marking the light
                 const elements = document.getElementsByClassName('trafficLight');
