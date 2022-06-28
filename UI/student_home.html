@@ -123,6 +123,8 @@ function courseOfStudent(){
                        }
                 }
                 document.getElementById("courseList").innerHTML=output+'<br />'+'<input type="submit" value="Confirm"></input>';
+                
+        //get notification for marking the light
                 const elements = document.getElementsByClassName('trafficLight');
                 const today = new Date().toISOString().slice(0, 10);
                 let  unmarked=Number(0);
@@ -170,6 +172,8 @@ function trafficLight(){
                     element.style.backgroundColor = 'white';
                     break;                  
             }
+            elementColor=element.style.backgroundColor;
+            element.name=elementColor; 
         })
             
     }
