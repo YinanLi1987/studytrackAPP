@@ -195,7 +195,9 @@ app.post('/login', async (req, res) => {
           const {courseName, lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,lesson09,students} = req.body;
           const client = await pool.connect();
           client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10,$11)',[courseName, students,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,lesson09]);
-        
+          for(i=0;i<students.length;i++) {
+              client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10,$11)',[courseName,students[i],'Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark'])
+          }
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
           res.redirect('/teacher_home')
@@ -219,11 +221,10 @@ app.post('/login', async (req, res) => {
             });
         })();
       try {
-          const {lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
-          const studentEmail='liyinan002@gmail.com';
-          const courseName='005JAVA';
+          const {studentEmail, courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
+       
           const client = await pool.connect();
-          client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) ',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
+          client.query('UPDATE trafficLight VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) WHERE studentEmail=$1 AND courseName=$2 ',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );

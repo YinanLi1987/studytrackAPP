@@ -110,7 +110,8 @@ function courseOfStudent(){
                 for(var i in courseInfo){
                     if(courseInfo[i].students.includes(userEmail)==true){
                         output+='<form action="/confirm" method="POST">'
-                        +courseInfo[i].coursename+'<br />'+'<br />'
+                        +'<input type="hidden" name="studentEmail" value="'+userEmail+'" >'    
+                        +'<input name=courseName value="'+courseInfo[i].coursename+'"></input>'+'<br />'+'<br />'
                         +'<lable for='+courseInfo[i].lesson01+'>'+courseInfo[i].lesson01+'</lable>'
                         +'<select type="text" class="trafficLight" id='+courseInfo[i].lesson01+' name="lesson01" style="background-color:white">'
                            +'<option value="green">Good</option>'
