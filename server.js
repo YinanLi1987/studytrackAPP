@@ -219,10 +219,10 @@ app.post('/login', async (req, res) => {
             });
         })();
       try {
-          const {lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
+          const {course01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
           const email='liyinan002@gmail.com'
           const client = await pool.connect();
-          client.query('INSERT INTO usrInfo (course01)VALUES ($1) WHERE email=$2',[lesson01, email]);
+          client.query('INSERT INTO usrInfo (course01)VALUES ($1) WHERE email=$2',[course01, email]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
