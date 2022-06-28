@@ -220,8 +220,9 @@ app.post('/login', async (req, res) => {
         })();
       try {
           const {course01} = req.body;
+          const email='liyinan002@gmail.com'
           const client = await pool.connect();
-          client.query('INSERT INTO usrInfo (course01)VALUES ($1)',[course01]);
+          client.query('INSERT INTO usrInfo (course01)VALUES ($1) WHERE email=$2',[course01,email]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
