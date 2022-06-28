@@ -208,7 +208,7 @@ app.post('/login', async (req, res) => {
 
 // confirm the status of traffic light
 
-      app.post('/confirm', async (req, res) => {
+    app.post('/confirm', async (req, res) => {
         const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -220,9 +220,10 @@ app.post('/login', async (req, res) => {
         })();
       try {
           const {lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09} = req.body;
-          const email='liyinan002@gmail.com'
+          const studentEmail='liyinan002@gmail.com';
+          const courseName='005JAVA';
           const client = await pool.connect();
-          client.query('INSERT INTO usrInfo (course01)VALUES ({$1,$2,$3,$4,$5,$6,$7,$8,$9}) WHERE email=$10',[lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09,email]);
+          client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1,$2,$3,$4,$5,$6,$7,$8,$9) WHERE email=$10',[studentEmail,courseName,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08, lesson09]);
         
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
@@ -233,7 +234,7 @@ app.post('/login', async (req, res) => {
             res.json({ error: err });
         }
       });
-
+*/
 
 
 
