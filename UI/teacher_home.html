@@ -130,7 +130,7 @@
                         }
                       
                     }
-                    localStorage.removeItem("userEmail");
+                    localStorage.removeItem("coursedata");
                     localStorage.setItem("coursedata",coursesdata);
                 }
         }
@@ -141,7 +141,7 @@
 
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
-            let courseArray=localStorage.getItem("cousedata");
+            let courseArray=localStorage.getItem("coursedata");
             console.log(courseArray);
             //create XHR Object
             var xhr = new XMLHttpRequest();
