@@ -154,7 +154,8 @@
                   
                         for(i in lightList){
                     if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
-                        output+= lightList[i].coursename+'<br />'
+                        for(j in courseArray){
+                            output+= lightList[j]+'<br />'
                                                          +lightList[i].studentemail
                                                          +' '+' '+lightList[i].date01+lightList[i].lesson01
                                                          +' '+' '+lightList[i].date02+lightList[i].lesson02    
@@ -166,6 +167,9 @@
                                                          +' '+' '+lightList[i].date08+lightList[i].lesson08  
                                                          +' '+' '+lightList[i].date09+lightList[i].lesson09
                                                          +'<br/>';
+
+                        }
+                        
     
                     }
                         }
