@@ -80,8 +80,7 @@
             </form>
         </div>
     </div>
-    
-  <div id="lightList"></div>
+
     
 
     <div>
@@ -127,7 +126,7 @@
                 var output='';
                 for(var i in courses){
                     output+='<ul>'+
-                        '<li class="courseName"> '+courses[i].coursename+'</li>'+
+                        '<li > '+courses[i].coursename+'</li>'
                         +'<li id="'+i+1+'"></li>'
                         +'</ul>';
 
@@ -139,7 +138,7 @@
     //send request
     xhr.send();
 }
-function loadLight(){
+/*function loadLight(){
         let userEmail=localStorage.getItem("userEmail");
         let course=document.getElementsByClassName("courseName").innerText;
         //create XHR Object
@@ -170,7 +169,7 @@ function loadLight(){
             }
             xhr.send();
     }
-
+*/
 // get login user information 
 function loginUser(){
     let userEmail=localStorage.getItem("userEmail");
