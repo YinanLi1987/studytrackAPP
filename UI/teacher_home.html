@@ -170,9 +170,9 @@
                       
                     
                    
-                    
-                    document.getElementById("courseList").innerHTML=output;
-                
+                    for(i in courseArray){
+                    document.getElementById("courseList").innerHTML=courseArray[i]+'<br />'+output;
+                }
                 }
         }
         //send request
