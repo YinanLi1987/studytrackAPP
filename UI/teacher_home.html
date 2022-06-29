@@ -153,22 +153,21 @@
                     var output='';
                   
                         for(i in lightList){
-                    if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
-                        for(j in courseArray){
-                            output+= lightList[j]+'<br />'
-                                                         +lightList[i].studentemail
-                                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
-                                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
-                                                         +' '+' '+lightList[i].date03+lightList[i].lesson03
-                                                         +' '+' '+lightList[i].date04+lightList[i].lesson04  
-                                                         +' '+' '+lightList[i].date05+lightList[i].lesson05
-                                                         +' '+' '+lightList[i].date06+lightList[i].lesson06    
-                                                         +' '+' '+lightList[i].date07+lightList[i].lesson07
-                                                         +' '+' '+lightList[i].date08+lightList[i].lesson08  
-                                                         +' '+' '+lightList[i].date09+lightList[i].lesson09
-                                                         +'<br/>';
+                    if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail && lightList[i].coursename==lightList[i+1].coursename){
+                       
+                            output+=  lightList[i].studentemail
+                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +'<br/>';
 
-                        }
+
                         
     
                     }
