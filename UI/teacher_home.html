@@ -155,7 +155,7 @@ function loadLight(){
                 var lightList=JSON.parse (this.responseText);
                 var output='';
               
-                    for(var i in lightList){
+                    for(let i=0;i<lightList.length;i++){
                 if(course.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
                     output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
                                                      +' '+' '+lightList[i].date02+lightList[i].lesson02    
@@ -173,7 +173,7 @@ function loadLight(){
                 
                
                 for(j=0;j<course.length;j++) {
-                document.getElementById(j+1).innerHTML=output;
+                document.getElementById(j).innerHTML=output;
             }  
             }
     }
