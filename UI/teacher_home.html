@@ -141,7 +141,7 @@
 
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
-            let courseArray=localStorage.getItem("coursedata");
+            let courseArray=new Array(localStorage.getItem("coursedata"));
             console.log(courseArray);
             //create XHR Object
             var xhr = new XMLHttpRequest();
