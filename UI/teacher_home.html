@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason();loginUser();studentslist();"> 
+<body onload="loadJason();loginUser();studentslist();loadLight();"> 
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -116,6 +116,7 @@
         let userEmail=localStorage.getItem("userEmail");
         document.getElementById("user").innerText=userEmail;
         document.getElementById("teacherName").value=userEmail;
+        
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
@@ -126,8 +127,10 @@
                 var output='';
                 for(var i in courses){
                     output+='<ul>'+
-                        '<li> '+courses[i].coursename+'<button>Track</button>'+'</li>'+
-                        '</ul>';
+                        '<li class="courseName"> '+courses[i].coursename+'</li>'+
+                        +'<li id="'+i+1+'"></li>'
+                        +'</ul>';
+
                 }
                
               document.getElementById("courseList").innerHTML=output;
@@ -136,6 +139,37 @@
     //send request
     xhr.send();
 }
+function loadLight(){
+        let userEmail=localStorage.getItem("userEmail");
+        let course=document.getElementsByClassName("courseName").innerText;
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db3', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var lightList=JSON.parse (this.responseText);
+                var output='';
+                for(var i in lightList){
+                    if(lightList[i].coursename==course && lightList[i].teacher==userEmail){
+                        output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
+                                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                                         +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                                         +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                                         +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                                         +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                                         +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                                         +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                                         +' '+' '+lightList[i].date09+lightList[i].lesson09;
+
+                    }
+                }
+                for(j=0;j<course.length;j++) {
+                    document.getElementById(j+1).innerHTML=output;
+                }    
+            }
+            xhr.send();
+    }
 
 // get login user information 
 function loginUser(){
@@ -184,31 +218,9 @@ function studentslist(){
     xhr.send();
 }
 
-// get traffic lights
 
-function lightJason(){
-        let userEmail=localStorage.getItem("userEmail");
-        document.getElementById("user").innerText=userEmail;
-        //create XHR Object
-        var xhr = new XMLHttpRequest();
-        //open -type, url/file,async
-        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db3', true);
-        xhr.onload=function(){
-            if(this.status==200){
-                var lightList=JSON.parse (this.responseText);
-                var output='';
-                for(var i in lightList){
-                    output+='<ul>'+
-                        '<li> COURSE:'+lightList[i].coursename+'<button>Track</button>'+'</li>'+
-                        '</ul>';
-                }
-               
-              document.getElementById("courseList").innerHTML=output;
-            }
-    }
-    //send request
-    xhr.send();
-}
+
+
 
 
     </script>
