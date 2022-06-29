@@ -128,7 +128,7 @@
                     if(courses[i].teacher=userEmail){
                         output+='<ul>'+
                         '<li class="courseName"> '+courses[i].coursename+'</li>'
-                        +'<li id="'+i+1+'"></li>'
+                        +'<li id="'+i+'"></li>'
                         +'</ul>';
                     }
                   
@@ -156,7 +156,7 @@ function loadLight(){
                 var output='';
               
                     for(var i in lightList){
-                if(lightList[i].coursename==course[i] && lightList[i].teacher==userEmail){
+                if(course.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
                     output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
                                                      +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                                      +' '+' '+lightList[i].date03+lightList[i].lesson03
