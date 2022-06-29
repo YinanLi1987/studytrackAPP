@@ -75,7 +75,7 @@
                <label for="addstudents">Add students</label>
                <div id="students" name="addstudents"></div>
                <input type="hidden" name="teacher" id="teacherName">
-               <input type="submit" value="Create">
+               <input type="submit" value="Create" onclick=loadJason()>
                <input type="button" id="cancel4" value="Cancel">
             </form>
         </div>
@@ -152,7 +152,7 @@
                     var lightList=JSON.parse (this.responseText);
                     var output='';
                   
-                        for(let i=0;i<lightList.length;i++){
+                        for(i in lightList){
                     if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
                         output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
                                                          +' '+' '+lightList[i].date02+lightList[i].lesson02    
