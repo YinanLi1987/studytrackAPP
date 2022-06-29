@@ -219,7 +219,7 @@ app.post('/login', async (req, res) => {
           const client = await pool.connect();
           client.query('INSERT INTO courseInfo VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10,$11,$12)',[courseName, students,lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,lesson09,teacher]);
           for(i=0;i<students.length;i++) {
-              client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)',[students[i],courseName,'Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark',lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,lesson09])
+              client.query('INSERT INTO trafficLight VALUES (DEFAULT,$1, $2, $3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21)',[students[i],courseName,'Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark','Unmark',lesson01, lesson02, lesson03, lesson04, lesson05, lesson06, lesson07, lesson08,lesson09,teacher])
           }
       //const results = { 'results': (result) ? result.rows : null};
       //res.json( results );
