@@ -145,7 +145,10 @@
 function loadLight(){
         let userEmail=localStorage.getItem("userEmail");
         let course=document.getElementsByClassName("courseName");
-        console.log(course[0]);
+        let courseArray=[];
+        for(let i=0;i<course.length;i++){
+            courseArray.push(course[i].innerHTML);
+        }
         
         //create XHR Object
         var xhr = new XMLHttpRequest();
@@ -157,7 +160,7 @@ function loadLight(){
                 var output='';
               
                     for(let i=0;i<lightList.length;i++){
-                if(course.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
+                if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
                     output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
                                                      +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                                      +' '+' '+lightList[i].date03+lightList[i].lesson03
@@ -173,7 +176,7 @@ function loadLight(){
                   
                 
                
-                for(j=0;j<course.length;j++) {
+                for(j=0;j<courseArray.length;j++) {
                 document.getElementById(j).innerHTML=output;
             }  
             }
