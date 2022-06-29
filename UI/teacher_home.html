@@ -154,7 +154,7 @@ function loadLight(){
             if(this.status==200){
                 var lightList=JSON.parse (this.responseText);
                 var output='';
-                for(var i in lightList){
+              
                     for(var i in lightList){
                 if(lightList[i].coursename==course[i] && lightList[i].teacher==userEmail){
                     output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
@@ -170,7 +170,7 @@ function loadLight(){
                 }
                     }
                   
-                }
+                
                
                 for(j=0;j<course.length;j++) {
                 document.getElementById(j+1).innerHTML=output;
