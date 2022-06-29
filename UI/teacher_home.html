@@ -152,7 +152,7 @@
                     var lightList=JSON.parse (this.responseText);
                     var output='';
                     for(var j=0;j<courseArray.length;j++){
-                        
+                        console.log(courseArray[j]);
                         for(i in lightList){
                             if(courseArray[j]==lightList[i].coursename && lightList[i].teacher==userEmail){
                                 output+=lightList[i].studentemail
