@@ -154,7 +154,9 @@
                   
                         for(i in lightList){
                     if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
-                        output+=lightList[i].studentemail+' '+' '+lightList[i].date01+lightList[i].lesson01
+                        output+= lightList[i].coursename+'<br />'
+                                                         +lightList[i].studentemail
+                                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
                                                          +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                                          +' '+' '+lightList[i].date03+lightList[i].lesson03
                                                          +' '+' '+lightList[i].date04+lightList[i].lesson04  
@@ -170,7 +172,7 @@
                       
                     
                    
-                    document.getElementById("courseList").innerHTML=lightList[i].coursename+'<br />'+output;
+                    document.getElementById("courseList").innerHTML=output;
                
                 }
         }
