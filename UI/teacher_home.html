@@ -151,11 +151,11 @@
                 if(this.status==200){
                     var lightList=JSON.parse (this.responseText);
                     var output='';
-                  
+                    for(var j=0;j<courseArray.length;j++){
+                        
                         for(i in lightList){
-                    if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail && lightList[i].coursename==lightList[i+1].coursename){
-                       
-                            output+=  lightList[i].studentemail
+                            if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
+                                output+=lightList[i].studentemail
                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                         +' '+' '+lightList[i].date03+lightList[i].lesson03
@@ -166,15 +166,9 @@
                                         +' '+' '+lightList[i].date08+lightList[i].lesson08  
                                         +' '+' '+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
-
-
-                        
-    
-                    }
+                            }   
                         }
-                      
-                    
-                   
+                    }
                     document.getElementById("courseList").innerHTML=output;
                
                 }
