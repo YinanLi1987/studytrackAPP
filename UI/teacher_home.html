@@ -130,8 +130,8 @@
                         }
                       
                     }
-                   
-                console.log(coursesdata);
+                    localStorage.removeItem("userEmail");
+                    localStorage.setItem("coursedata",coursesdata);
                 }
         }
         //send request
