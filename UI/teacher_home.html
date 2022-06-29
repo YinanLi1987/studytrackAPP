@@ -154,7 +154,7 @@
                     for(var j=0;j<courseArray.length;j++){
                         
                         for(i in lightList){
-                            if(courseArray.includes(lightList[i].coursename)==true && lightList[i].teacher==userEmail){
+                            if(courseArray[j]==lightList[i].coursename && lightList[i].teacher==userEmail){
                                 output+=lightList[i].studentemail
                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
@@ -167,9 +167,10 @@
                                         +' '+' '+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
                             }   
+                            document.getElementById("courseList").innerHTML=courseArray[j]+ output;
                         }
                     }
-                    document.getElementById("courseList").innerHTML=output;
+                   
                
                 }
         }
