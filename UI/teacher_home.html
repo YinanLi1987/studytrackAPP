@@ -74,6 +74,7 @@
                <input type="date" id="lesson09" required name="lesson09">
                <label for="addstudents">Add students</label>
                <div id="students" name="addstudents"></div>
+               <input type="hidden" name="teacher" id="teacherName">
                <input type="submit" value="Create">
                <input type="button" id="cancel4" value="Cancel">
             </form>
@@ -114,6 +115,7 @@
         function loadJason(){
         let userEmail=localStorage.getItem("userEmail");
         document.getElementById("user").innerText=userEmail;
+        document.getElementById("teacherName").value=userEmail;
         //create XHR Object
         var xhr = new XMLHttpRequest();
         //open -type, url/file,async
@@ -182,7 +184,31 @@ function studentslist(){
     xhr.send();
 }
 
+// get traffic lights
 
+function lightJason(){
+        let userEmail=localStorage.getItem("userEmail");
+        document.getElementById("user").innerText=userEmail;
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var courses=JSON.parse (this.responseText);
+                var output='';
+                for(var i in courses){
+                    output+='<ul>'+
+                        '<li> COURSE:'+courses[i].coursename+'<button>Track</button>'+'</li>'+
+                        '</ul>';
+                }
+               
+              document.getElementById("courseList").innerHTML=output;
+            }
+    }
+    //send request
+    xhr.send();
+}
 
 
     </script>
