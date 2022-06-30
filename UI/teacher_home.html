@@ -159,10 +159,10 @@
                     var output3='';
                     var output4='';
                     var output5='';
-                    for(j=0;j<courseArray.length;j++){
+                 
                         for(i in lightList){
-                            if(courseArray[j]==lightList[i].coursename && lightList[i].teacher==userEmail){
-                                (output+j)+=lightList[i].studentemail
+                            if(courseArray[0]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output1+=lightList[i].studentemail
                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                         +' '+' '+lightList[i].date03+lightList[i].lesson03
@@ -173,17 +173,43 @@
                                         +' '+' '+lightList[i].date08+lightList[i].lesson08  
                                         +' '+' '+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
-                            }   
-
+                                     }
+                                }
+                                for(i in lightList){
+                            if(courseArray[1]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output1+=lightList[i].studentemail
+                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +'<br/>';
+                                     }
+                                }
+                                for(i in lightList){
+                            if(courseArray[2]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output1+=lightList[i].studentemail
+                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +'<br/>';
+                                     }
+                                }
+                        document.getElementById("courseList1").innerHTML=courseArray[0]+output1
+                        document.getElementById("courseList2").innerHTML=courseArray[1]+output2
+                        document.getElementById("courseList3").innerHTML=courseArray[2]+output3
                     }
-                       
-                            
-                        }
-                        document.getElementById("courseList1").innerHTML=courseArray[j]+ (output+j)
-                   
-    
                 }
-        }
         //send request
         xhr.send();
     }
