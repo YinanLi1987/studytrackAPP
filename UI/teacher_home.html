@@ -18,11 +18,13 @@
         <a href="#" id="message">Message</a>
         <a href="#" id="user" > user</a>
     </div>
+    <div class="courseList">
     <div id="courseList1"></div>
     <div id="courseList2"></div>
     <div id="courseList3"></div>
     <div id="courseList4"></div>
     <div id="courseList5"></div>
+</div>
     <div id="editInfo">
         <div class="editInformation">
             
@@ -244,8 +246,12 @@
                 }
         //send request
         xhr.send();
+        for(i=0;i<courseList.length;i++){
+        if(document.getElementsByClassName("courseList")[i].textContent=="undefined"){
+            document.getElementsByClassName("courseList")[i].textContent=="undefined"
     }
-
+}
+}
 // get login user information 
 function loginUser(){
     let userEmail=localStorage.getItem("userEmail");
