@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason();loginUser();studentslist();loadLight();"> 
+<body onload="loginUser();studentslist();loadJason();loadLight();"> 
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -122,7 +122,56 @@
 
     
 
-    function loadJason(){
+  
+
+
+   
+// get login user information 
+function loginUser(){
+    let userEmail=localStorage.getItem("userEmail");
+        //create XHR Object
+        var xhr = new XMLHttpRequest();
+        //open -type, url/file,async
+        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db', true);
+        xhr.onload=function(){
+            if(this.status==200){
+                var userInfo=JSON.parse (this.responseText);
+
+                
+                var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
+                var username=userInfo[userIndex].fname;
+                
+                document.getElementById("user").innerText=username;
+            }
+    }
+    //send request
+    xhr.send();
+}
+// show all students name
+
+function studentslist(){
+  
+  //create XHR Object
+  var xhr = new XMLHttpRequest();
+  //open -type, url/file,async
+  xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/dbstudent', true);
+  xhr.onload=function(){
+      if(this.status==200){
+          var studentInfo=JSON.parse (this.responseText);
+          var output='';
+          for(var i in studentInfo){
+              output+='<input type="checkbox" name="students"value='+studentInfo[i].email+'>'+studentInfo[i].fname+studentInfo[i].lname+'</input>';
+          }
+         
+        document.getElementById("students").innerHTML=output;
+  
+      }
+}
+//send request
+xhr.send();
+}
+
+function loadJason(){
             let userEmail=localStorage.getItem("userEmail");
             document.getElementById("user").innerText=userEmail;
             document.getElementById("teacherName").value=userEmail;
@@ -148,8 +197,6 @@
         //send request
         xhr.send();
     }
-
-
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
             let courseArray=JSON.parse(localStorage.getItem("coursedata"));
@@ -255,52 +302,6 @@
 }
 
 
-// get login user information 
-function loginUser(){
-    let userEmail=localStorage.getItem("userEmail");
-        //create XHR Object
-        var xhr = new XMLHttpRequest();
-        //open -type, url/file,async
-        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db', true);
-        xhr.onload=function(){
-            if(this.status==200){
-                var userInfo=JSON.parse (this.responseText);
-
-                
-                var userIndex=userInfo.map(object => object.email).indexOf(userEmail);
-                var username=userInfo[userIndex].fname;
-                
-                document.getElementById("user").innerText=username;
-            }
-    }
-    //send request
-    xhr.send();
-}
-
-
-// show all students name
-
-function studentslist(){
-  
-        //create XHR Object
-        var xhr = new XMLHttpRequest();
-        //open -type, url/file,async
-        xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/dbstudent', true);
-        xhr.onload=function(){
-            if(this.status==200){
-                var studentInfo=JSON.parse (this.responseText);
-                var output='';
-                for(var i in studentInfo){
-                    output+='<input type="checkbox" name="students"value='+studentInfo[i].email+'>'+studentInfo[i].fname+studentInfo[i].lname+'</input>';
-                }
-               
-              document.getElementById("students").innerHTML=output;
-        
-            }
-    }
-    //send request
-    xhr.send();
-}
 
 
 
