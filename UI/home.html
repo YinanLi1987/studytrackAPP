@@ -31,7 +31,7 @@
                 <input type="email" id="Email" placeholder="email" required name="Email"> 
                 <label for="password">Password</label>
                 <input type="password" id="Password" placeholder="password" required name="Password">
-                <input type="submit" id="userlogin" value="Log in">
+                <input type="submit" id="userlogin" value="Log in" onclick=loadJason()>
                 <input type="button" id="cancel1" value="Cancel">
             </form>
         </div>
@@ -104,6 +104,33 @@
     document.getElementById("cancel2").addEventListener("click",function(){
         document.querySelector("#signPart").style.display="none";
     })
+
+    function loadJason(){
+            let userEmail=localStorage.getItem("userEmail");
+            document.getElementById("user").innerText=userEmail;
+            document.getElementById("teacherName").value=userEmail;
+            
+            //create XHR Object
+            var xhr = new XMLHttpRequest();
+            //open -type, url/file,async
+            xhr.open("GET", 'https://stark-ridge-06549.herokuapp.com/db2', true);
+            xhr.onload=function(){
+                if(this.status==200){
+                    var courses=JSON.parse (this.responseText);
+                    var coursesdata=[];
+                    for(var i in courses){
+                        if(courses[i].teacher=userEmail){
+                           coursesdata.push(courses[i].coursename);
+                        }
+                      
+                    }
+                    
+                    localStorage.setItem("coursedata",JSON.stringify(coursesdata));
+                }
+        }
+        //send request
+        xhr.send();
+    }
 </script>
 </body>
 </html>
