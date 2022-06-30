@@ -18,7 +18,11 @@
         <a href="#" id="message">Message</a>
         <a href="#" id="user" > user</a>
     </div>
-    <div id="courseList"></div>
+    <div id="courseList1"></div>
+    <div id="courseList2"></div>
+    <div id="courseList3"></div>
+    <div id="courseList4"></div>
+    <div id="courseList5"></div>
     <div id="editInfo">
         <div class="editInformation">
             
@@ -150,12 +154,15 @@
             xhr.onload=function(){
                 if(this.status==200){
                     var lightList=JSON.parse (this.responseText);
-                    var output='';
-                    for(var j=0;j<courseArray.length;j++){
-                        console.log(courseArray[j]);
+                    var output1='';
+                    var output2='';
+                    var output3='';
+                    var output4='';
+                    var output5='';
+                   
                         for(i in lightList){
-                            if(courseArray[j]==lightList[i].coursename && lightList[i].teacher==userEmail){
-                                output+=lightList[i].studentemail
+                            if(courseArray[0]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output1+=lightList[i].studentemail
                                         +' '+' '+lightList[i].date01+lightList[i].lesson01
                                         +' '+' '+lightList[i].date02+lightList[i].lesson02    
                                         +' '+' '+lightList[i].date03+lightList[i].lesson03
@@ -169,8 +176,8 @@
                             }   
                             
                         }
-                        document.getElementById("courseList").innerHTML=courseArray[j]+ output;
-                    }
+                        document.getElementById("courseList1").innerHTML=courseArray[0]+ output;
+                    
                    
                
                 }
