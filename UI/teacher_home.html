@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="teacher_home.css">
     <title>Course System</title>
 </head>
-<body onload="loadJason();loginUser();studentslist();loadLight();"> 
+<body onload="loadJason();loginUser();studentslist();loadLight();hide();"> 
     <div>
         <header>
             <h1>COURSE MANAGEMENT SYSTEM</h1>
@@ -250,12 +250,18 @@
                 }
         //send request
         xhr.send();
-        for(i=0;i<courseList.length;i++){
+        
+}
+//hide undefined courses
+function hide(){
+    for(i=0;i<courseList.length;i++){
         if(document.getElementsByClassName("courseList")[i].textContent=="undefined"){
             document.getElementsByClassName("courseList")[i].textContent=="undefined"
     }
 }
+
 }
+
 // get login user information 
 function loginUser(){
     let userEmail=localStorage.getItem("userEmail");
