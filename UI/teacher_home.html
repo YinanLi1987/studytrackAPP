@@ -205,9 +205,41 @@
                                         +'<br/>';
                                      }
                                 }
-                        document.getElementById("courseList1").innerHTML=courseArray[0]+output1
-                        document.getElementById("courseList2").innerHTML=courseArray[1]+output2
-                        document.getElementById("courseList3").innerHTML=courseArray[2]+output3
+                                for(i in lightList){
+                            if(courseArray[3]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output4+=lightList[i].studentemail
+                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +'<br/>';
+                                     }
+                                }
+                                for(i in lightList){
+                            if(courseArray[4]==lightList[i].coursename && lightList[i].teacher==userEmail){
+                                output5+=lightList[i].studentemail
+                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +'<br/>';
+                                     }
+                                }
+                        document.getElementById("courseList1").innerHTML=courseArray[0]+'<br/>'+output1
+                        document.getElementById("courseList2").innerHTML=courseArray[1]+'<br/>'+output2
+                        document.getElementById("courseList3").innerHTML=courseArray[2]+'<br/>'+output3
+                        document.getElementById("courseList4").innerHTML=courseArray[3]+'<br/>'+output4
+                        document.getElementById("courseList5").innerHTML=courseArray[4]+'<br/>'+output5
                     }
                 }
         //send request
