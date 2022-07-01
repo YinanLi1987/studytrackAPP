@@ -24,6 +24,7 @@
 
     <div class="courseTable">
         <div id="courseList1"></div>
+        <div id="message1"></div>
         <div id="courseList2"></div>
         <div id="courseList3"></div>
         <div id="courseList4"></div>
@@ -200,6 +201,7 @@ function loadJason(){
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
             let courseArray=JSON.parse(localStorage.getItem("coursedata"));
+            const today = new Date().toISOString().slice(0, 10);
             console.log(courseArray);
             //create XHR Object
             var xhr = new XMLHttpRequest();
@@ -228,6 +230,7 @@ function loadJason(){
                                         +' '+' '+'<span style="background-color:'+lightList[i].lesson09+'; border:1px solid black;">'+lightList[i].date09+lightList[i].lesson09+'</span>'
                                         +'<br/>';
                                      }
+                           
                                 }
                                 for(i in lightList){
                             if(courseArray[1]==lightList[i].coursename && lightList[i].teacher==userEmail){
@@ -258,6 +261,21 @@ function loadJason(){
                                         +' '+' '+'<span style="background-color:'+lightList[i].lesson09+'; border:1px solid black;">'+lightList[i].date09+lightList[i].lesson09+'</span>'
                                         +'<br/>';
                                      }
+                                     let  unmarked=Number(0);
+                                     for(j=0;j<9;j++) {
+                                         if(lightList[i].lesson0[j]="Umark" && lightList[i].date[j]<today){
+                                            unmarked +=1;
+                                        }
+                                        if (unmarked==0) {
+                                            document.getElementById("message1").innerText='You have'+' '+unmarked+' '+'traffic light to mark.'
+                                            document.getElementById("message1").style.color='black';
+
+                                        }else {
+                                             document.getElementById("message1").innerText='You have'+' '+unmarked+' '+'traffic lights to mark!'
+                                             document.getElementById("message1").style.color='red';
+
+                                            }
+                                        }
                                 }
                                 for(i in lightList){
                             if(courseArray[3]==lightList[i].coursename && lightList[i].teacher==userEmail){
@@ -288,12 +306,14 @@ function loadJason(){
                                         +' '+' '+'<span style="background-color:'+lightList[i].lesson09+'; border:1px solid black;">'+lightList[i].date09+lightList[i].lesson09+'</span>'
                                         +'<br/>';
                                      }
+                                   
                                 }
                         document.getElementById("courseList1").innerHTML=courseArray[0]+'<br/>'+output1
                         document.getElementById("courseList2").innerHTML=courseArray[1]+'<br/>'+output2
                         document.getElementById("courseList3").innerHTML=courseArray[2]+'<br/>'+output3
                         document.getElementById("courseList4").innerHTML=courseArray[3]+'<br/>'+output4
                         document.getElementById("courseList5").innerHTML=courseArray[4]+'<br/>'+output5
+            
                         
                       
                     }
