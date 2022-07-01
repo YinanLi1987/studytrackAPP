@@ -262,8 +262,8 @@ function loadJason(){
                                         +'<br/>';
                                      }
                                      let  unmarked=Number(0);
-                                     for(j=0;j<9;j++) {
-                                         if(lightList[i].lesson0[j]="Umark" && lightList[i].date[j]<today){
+                                     for(j=1;j<10;j++) {
+                                         if(lightList[i].lesson0[j]="Unmark" && lightList[i].date[j]<today){
                                             unmarked +=1;
                                         }
                                         if (unmarked==0) {
