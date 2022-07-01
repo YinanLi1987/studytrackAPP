@@ -217,30 +217,30 @@ function loadJason(){
                         for(i in lightList){
                             if(courseArray[0]==lightList[i].coursename && lightList[i].teacher==userEmail){
                                 output1+=lightList[i].studentemail
-                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
-                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
-                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
-                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
-                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
-                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
-                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
-                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
-                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
                                      }
                                 }
                                 for(i in lightList){
                             if(courseArray[1]==lightList[i].coursename && lightList[i].teacher==userEmail){
                                 output2+=lightList[i].studentemail
-                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
-                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
-                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
-                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
-                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
-                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
-                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
-                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
-                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date01+lightList[i].lesson01
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
                                      }
                                 }
@@ -277,15 +277,15 @@ function loadJason(){
                                 for(i in lightList){
                             if(courseArray[4]==lightList[i].coursename && lightList[i].teacher==userEmail){
                                 output5+=lightList[i].studentemail
-                                        +' '+' '+lightList[i].date01+lightList[i].lesson01
-                                        +' '+' '+lightList[i].date02+lightList[i].lesson02    
-                                        +' '+' '+lightList[i].date03+lightList[i].lesson03
-                                        +' '+' '+lightList[i].date04+lightList[i].lesson04  
-                                        +' '+' '+lightList[i].date05+lightList[i].lesson05
-                                        +' '+' '+lightList[i].date06+lightList[i].lesson06    
-                                        +' '+' '+lightList[i].date07+lightList[i].lesson07
-                                        +' '+' '+lightList[i].date08+lightList[i].lesson08  
-                                        +' '+' '+lightList[i].date09+lightList[i].lesson09
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date01+lightList[i].lesson01+'</div>'
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date02+lightList[i].lesson02    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date03+lightList[i].lesson03
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date04+lightList[i].lesson04  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date05+lightList[i].lesson05
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date06+lightList[i].lesson06    
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date07+lightList[i].lesson07
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date08+lightList[i].lesson08  
+                                        +' '+' '+'<div class="lightcolor"'+lightList[i].date09+lightList[i].lesson09
                                         +'<br/>';
                                      }
                                 }
@@ -294,6 +294,7 @@ function loadJason(){
                         document.getElementById("courseList3").innerHTML=courseArray[2]+'<br/>'+output3
                         document.getElementById("courseList4").innerHTML=courseArray[3]+'<br/>'+output4
                         document.getElementById("courseList5").innerHTML=courseArray[4]+'<br/>'+output5
+                        document.getElementsByClassName("lightcolor").style.backgroundColor=lightList[i].lesson01;
                     }
                 }
         //send request
