@@ -201,7 +201,7 @@ function loadJason(){
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
             let courseArray=JSON.parse(localStorage.getItem("coursedata"));
-            const today = new Date().toISOString().slice(0, 10);
+          
             console.log(courseArray);
             //create XHR Object
             var xhr = new XMLHttpRequest();
@@ -261,21 +261,7 @@ function loadJason(){
                                         +' '+' '+'<span style="background-color:'+lightList[i].lesson09+'; border:1px solid black;">'+lightList[i].date09+lightList[i].lesson09+'</span>'
                                         +'<br/>';
                                      }
-                                     let  unmarked=Number(0);
-                                     for(j=1;j<10;j++) {
-                                         if(lightList[i].lesson0[j]="Unmark" && lightList[i].date0[j]<today){
-                                            unmarked +=1;
-                                        }
-                                        if (unmarked==0) {
-                                            document.getElementById("message1").innerText='You have'+' '+unmarked+' '+'traffic light to mark.'
-                                            document.getElementById("message1").style.color='black';
-
-                                        }else {
-                                             document.getElementById("message1").innerText='You have'+' '+unmarked+' '+'traffic lights to mark!'
-                                             document.getElementById("message1").style.color='red';
-
-                                            }
-                                        }
+                                    
                                 }
                                 for(i in lightList){
                             if(courseArray[3]==lightList[i].coursename && lightList[i].teacher==userEmail){
