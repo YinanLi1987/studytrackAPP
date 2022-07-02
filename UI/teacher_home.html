@@ -10,13 +10,13 @@
 <body onload="loginUser();studentslist();loadJason();loadLight();"> 
     <div>
         <header>
-            <h1>COURSE MANAGEMENT SYSTEM</h1>
+            <h1>STUDY TRACK</h1>
         </header> 
     </div>
 
     <div class="userbar" >
         <a href="#" id="createCourse">Create a Course</a>
-        <a href="#" id="message" onclick="message();">Message</a>
+        <a href="#" id="message" onclick="message();">Summary</a>
         <a href="#" id="user" > user</a>
         <a href="https://stark-ridge-06549.herokuapp.com/">Log out</a>
     </div>
@@ -24,7 +24,7 @@
 
     <div class="courseTable">
         <div id="courseList1"></div>
-        <div id="message1"></div>
+        <div id="message1" style="background-color: aqua;color: white;"></div>
         <div id="courseList2"></div>
         <div id="courseList3"></div>
         <div id="courseList4"></div>
@@ -355,7 +355,7 @@ function message(){
                         unmarked1 +=1;
                     }
                 }  
-                document.getElementById("message1").innerHTML="There are "+unmarked1+" traffic light need to mark." 
+                document.getElementById("message1").innerHTML=courseArray[1]+": There are "+unmarked1+" traffic light need to mark." 
             }
         }
         //send request
