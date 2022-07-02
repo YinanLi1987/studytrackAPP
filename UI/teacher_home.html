@@ -314,9 +314,7 @@ function loadJason(){
         
 }
 function message(){
-    let userEmail=localStorage.getItem("userEmail");
-    let courseArray=JSON.parse(localStorage.getItem("coursecourses"));
-    const today = new Date().toISOString().slice(0, 10);
+  
 //create XHR Object
     var xhr = new XMLHttpRequest();
 //open -type, url/file,async
@@ -329,6 +327,9 @@ function message(){
                 let  unmarked3=Number(0);
                 let  unmarked4=Number(0);
                 let  unmarked5=Number(0);
+                let userEmail=localStorage.getItem("userEmail");
+                let courseArray=JSON.parse(localStorage.getItem("coursecourses"));
+                const today = new Date().toISOString().slice(0, 10);
                 
                 for(i=0; i<courses.length; i++) {
                     if(courseArray[0]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
