@@ -423,7 +423,7 @@ function message(){
                     }
                 }  
                 
-                for(i=0; i<courses.length; i++) {
+                for(i in courses) {
                     if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
                         unmarked4 +=1;
                     }
