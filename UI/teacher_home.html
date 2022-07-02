@@ -23,11 +23,15 @@
 
 
     <div class="courseTable">
-        <div id="courseList1"></div>
         <div id="message1" style="background-color: aqua;color:black;"></div>
+        <div id="courseList1"></div>
+        <div id="message2" style="background-color: aqua;color:black;"></div>
         <div id="courseList2"></div>
+        <div id="message3" style="background-color: aqua;color:black;"></div>
         <div id="courseList3"></div>
+        <div id="message4" style="background-color: aqua;color:black;"></div>
         <div id="courseList4"></div>
+        <div id="message5" style="background-color: aqua;color:black;"></div>
         <div id="courseList5"></div>
    </div>
 
@@ -354,7 +358,131 @@ function message(){
                         unmarked1 +=1;
                     }
                 }  
-                document.getElementById("message1").innerHTML="There are "+unmarked1+" traffic lights need to mark in this lesson."+courseArray[0] ;
+               
+                for(i=0; i<courses.length; i++) {
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date02<today && courses[i].lesson02=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date03<today && courses[i].lesson03=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date04<today && courses[i].lesson04=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date05<today && courses[i].lesson05=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date06<today && courses[i].lesson06=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date07<today && courses[i].lesson07=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date08<today && courses[i].lesson08=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                    if(courseArray[1]=courses[i].coursename && courses[i].teacher==courses && courses[i].date09<today && courses[i].lesson09=="Unmark"){
+                        unmarked2 +=1;
+                    }
+                }  
+                
+                for(i=0; i<courses.length; i++) {
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date02<today && courses[i].lesson02=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date03<today && courses[i].lesson03=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date04<today && courses[i].lesson04=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date05<today && courses[i].lesson05=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date06<today && courses[i].lesson06=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date07<today && courses[i].lesson07=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date08<today && courses[i].lesson08=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                    if(courseArray[2]=courses[i].coursename && courses[i].teacher==courses && courses[i].date09<today && courses[i].lesson09=="Unmark"){
+                        unmarked3 +=1;
+                    }
+                }  
+                
+                for(i=0; i<courses.length; i++) {
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date02<today && courses[i].lesson02=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date03<today && courses[i].lesson03=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date04<today && courses[i].lesson04=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date05<today && courses[i].lesson05=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date06<today && courses[i].lesson06=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date07<today && courses[i].lesson07=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date08<today && courses[i].lesson08=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                    if(courseArray[3]=courses[i].coursename && courses[i].teacher==courses && courses[i].date09<today && courses[i].lesson09=="Unmark"){
+                        unmarked4 +=1;
+                    }
+                }  
+                
+                for(i=0; i<courses.length; i++) {
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date02<today && courses[i].lesson02=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date03<today && courses[i].lesson03=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date04<today && courses[i].lesson04=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date05<today && courses[i].lesson05=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date06<today && courses[i].lesson06=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date07<today && courses[i].lesson07=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date08<today && courses[i].lesson08=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                    if(courseArray[4]=courses[i].coursename && courses[i].teacher==courses && courses[i].date09<today && courses[i].lesson09=="Unmark"){
+                        unmarked5 +=1;
+                    }
+                }  
+                document.getElementById("message1").innerHTML="There are "+unmarked1+" traffic lights need to mark in this course.";
+                document.getElementById("message2").innerHTML="There are "+unmarked2+" traffic lights need to mark in this course.";
+                document.getElementById("message3").innerHTML="There are "+unmarked3+" traffic lights need to mark in this course.";
+                document.getElementById("message4").innerHTML="There are "+unmarked4+" traffic lights need to mark in this course.";
+                document.getElementById("message5").innerHTML="There are "+unmarked5+" traffic lights need to mark in this course.";
             }
         }
         //send request
