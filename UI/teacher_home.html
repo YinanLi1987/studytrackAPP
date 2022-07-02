@@ -313,7 +313,7 @@ function message(){
     let userEmail=localStorage.getItem("userEmail");
     let courseArray=JSON.parse(localStorage.getItem("coursecourses"));
     const today = new Date().toISOString().slice(0, 10);
-  
+  console.log(today);
 //create XHR Object
     var xhr = new XMLHttpRequest();
 //open -type, url/file,async
