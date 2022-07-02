@@ -479,13 +479,14 @@ function message(){
                         unmarked5 +=1;
                     }
                 }  
-                console.log(courseArray[1])
+             
                 document.getElementById("message1").innerHTML="There are "+unmarked1+" traffic lights need to mark in this course.";
                 document.getElementById("message2").innerHTML="There are "+unmarked2+" traffic lights need to mark in this course.";
                 document.getElementById("message3").innerHTML="There are "+unmarked3+" traffic lights need to mark in this course.";
                 document.getElementById("message4").innerHTML="There are "+unmarked4+" traffic lights need to mark in this course.";
                 document.getElementById("message5").innerHTML="There are "+unmarked5+" traffic lights need to mark in this course.";
             }
+            console.log(courseArray[1])
         }
         //send request
         xhr.send();
