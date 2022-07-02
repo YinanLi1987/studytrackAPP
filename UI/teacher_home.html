@@ -329,6 +329,7 @@ function message(){
                 let  unmarked3=Number(0);
                 let  unmarked4=Number(0);
                 let  unmarked5=Number(0);
+                
                 for(i=0; i<courses.length; i++) {
                     if(courseArray[0]=courses[i].coursename && courses[i].teacher==userEmail && courses[i].date01<today && courses[i].lesson01=="Unmark"){
                         unmarked1 +=1;
@@ -478,6 +479,7 @@ function message(){
                         unmarked5 +=1;
                     }
                 }  
+                console.log(courseArray[0],courseArray[1],courseArray[2],courseArray[3])
                 document.getElementById("message1").innerHTML="There are "+unmarked1+" traffic lights need to mark in this course.";
                 document.getElementById("message2").innerHTML="There are "+unmarked2+" traffic lights need to mark in this course.";
                 document.getElementById("message3").innerHTML="There are "+unmarked3+" traffic lights need to mark in this course.";
