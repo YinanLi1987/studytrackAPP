@@ -23,9 +23,9 @@
 
 
     <div class="courseTable">
-        <div id="message1" style="background-color: aqua;color:black;"></div>
+       
         <div id="courseList1"></div>
-        <div id="message2" style="background-color: aqua;color:black;"></div>
+   
         <div id="courseList2"></div>
         <div id="message3" style="background-color: aqua;color:black;"></div>
         <div id="courseList3"></div>
@@ -299,8 +299,8 @@ function loadJason(){
                                      }
                                    
                                 }
-                        document.getElementById("courseList1").innerHTML=courseArray[0]+'<br/>'+output1
-                        document.getElementById("courseList2").innerHTML=courseArray[1]+'<br/>'+output2
+                        document.getElementById("courseList1").innerHTML=courseArray[0]+'<div id="message1" style="background-color: aqua;color:black;"></div>'+'<br/>'+output1
+                        document.getElementById("courseList2").innerHTML=courseArray[1]+'<div id="message2" style="background-color: aqua;color:black;"></div>'+'<br/>'+output2
                         document.getElementById("courseList3").innerHTML=courseArray[2]+'<br/>'+output3
                         document.getElementById("courseList4").innerHTML=courseArray[3]+'<br/>'+output4
                         document.getElementById("courseList5").innerHTML=courseArray[4]+'<br/>'+output5
