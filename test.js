@@ -1,10 +1,7 @@
-<script>
-   function test(x, y) {
-       return x + y;
-   }
 
 
-    function notification(){
+
+
         let data =[
     {"lightid":18,"studentemail":"liyinan001@gmail.com","coursename":"Finnish","lesson01":"Unmark","lesson02":"Unmark","lesson03":"Unmark","lesson04":"Unmark","lesson05":"Unmark","lesson06":"Unmark","lesson07":"Unmark","lesson08":"Unmark","lesson09":"Unmark","date01":"2022-06-01","date02":"2022-06-08","date03":"2022-06-15","date04":"2022-06-22","date05":"2022-06-30","date06":"2022-07-06","date07":"2022-07-13","date08":"2022-07-20","date09":"2022-07-20","teacher":"liyinan41@gmail.com"},
     {"lightid":23,"studentemail":"liyinan002@gmail.com","coursename":"005JAVA","lesson01":"Green","lesson02":"Green","lesson03":"Green","lesson04":"Yellow","lesson05":"Yellow","lesson06":"Yellow","lesson07":"Red","lesson08":"Red","lesson09":"Green","date01":"2022-07-08","date02":"2022-07-15","date03":"2022-07-22","date04":"2022-07-29","date05":"2022-08-06","date06":"2022-07-09","date07":"2022-07-16","date08":"2022-07-23","date09":"2022-07-23","teacher":"liyinan41@gmail.com"},
@@ -15,40 +12,10 @@
     
      const today = new Date().toISOString().slice(0, 10);
      let  unmarked=Number(0);
+     console.log(today);
+     console.log(data[0].date01);
 
-for(i=0; i<data.length; i++) {
-    if(data[i].date01<today && data[i].lesson01=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson02=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson03=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson04=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson05=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson06=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson07=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson08=="Unmark"){
-        unmarked +=1;
-    }
-    if(data[i].date01<today && data[i].lesson09=="Unmark"){
-        unmarked +=1;
-    }
-    console.log(unmarked)
-    test(3,4);
-}
+if(today>data[0].date01){
+    console.log(today);
+ }
 
-}
-
-
-</script>
