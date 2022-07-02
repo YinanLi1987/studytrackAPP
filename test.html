@@ -1,22 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <select name="" id="">
-        <option value="">001</option>
-        <option value="">002</option>
-        <option value="">003</option>
-        <option value="">004</option>
-    </select>
+<script>
+   function test(x, y) {
+       return x + y;
+   }
 
-    <script>
-        let x=document.querySelector(option).innerHTML;
-        console.log(x);
-    </script>
-</body>
-</html>
+
+    function notification(){
+        let data =[
+    {"lightid":18,"studentemail":"liyinan001@gmail.com","coursename":"Finnish","lesson01":"Unmark","lesson02":"Unmark","lesson03":"Unmark","lesson04":"Unmark","lesson05":"Unmark","lesson06":"Unmark","lesson07":"Unmark","lesson08":"Unmark","lesson09":"Unmark","date01":"2022-06-01","date02":"2022-06-08","date03":"2022-06-15","date04":"2022-06-22","date05":"2022-06-30","date06":"2022-07-06","date07":"2022-07-13","date08":"2022-07-20","date09":"2022-07-20","teacher":"liyinan41@gmail.com"},
+    {"lightid":23,"studentemail":"liyinan002@gmail.com","coursename":"005JAVA","lesson01":"Green","lesson02":"Green","lesson03":"Green","lesson04":"Yellow","lesson05":"Yellow","lesson06":"Yellow","lesson07":"Red","lesson08":"Red","lesson09":"Green","date01":"2022-07-08","date02":"2022-07-15","date03":"2022-07-22","date04":"2022-07-29","date05":"2022-08-06","date06":"2022-07-09","date07":"2022-07-16","date08":"2022-07-23","date09":"2022-07-23","teacher":"liyinan41@gmail.com"},
+    {"lightid":19,"studentemail":"liyinan002@gmail.com","coursename":"Finnish","lesson01":"Yellow","lesson02":"Green","lesson03":"Red","lesson04":"Yellow","lesson05":"Green","lesson06":"Yellow","lesson07":"Yellow","lesson08":"Yellow","lesson09":"Red","date01":"2022-06-01","date02":"2022-06-08","date03":"2022-06-15","date04":"2022-06-22","date05":"2022-06-30","date06":"2022-07-06","date07":"2022-07-13","date08":"2022-07-20","date09":"2022-07-20","teacher":"liyinan41@gmail.com"},
+    {"lightid":22,"studentemail":"liyinan001@gmail.com","coursename":"005JAVA","lesson01":"Unmark","lesson02":"Unmark","lesson03":"Unmark","lesson04":"Unmark","lesson05":"Unmark","lesson06":"Unmark","lesson07":"Unmark","lesson08":"Unmark","lesson09":"Unmark","date01":"2022-07-08","date02":"2022-07-15","date03":"2022-07-22","date04":"2022-07-29","date05":"2022-08-06","date06":"2022-07-09","date07":"2022-07-16","date08":"2022-07-23","date09":"2022-07-23","teacher":"liyinan41@gmail.com"}]
+
+
+    
+     const today = new Date().toISOString().slice(0, 10);
+     let  unmarked=Number(0);
+
+for(i=0; i<data.length; i++) {
+    if(data[i].date01<today && data[i].lesson01=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson02=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson03=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson04=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson05=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson06=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson07=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson08=="Unmark"){
+        unmarked +=1;
+    }
+    if(data[i].date01<today && data[i].lesson09=="Unmark"){
+        unmarked +=1;
+    }
+    console.log(unmarked)
+    test(3,4);
+}
+
+}
+
+
+</script>
