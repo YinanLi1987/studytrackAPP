@@ -9,13 +9,7 @@
     {"lightid":22,"studentemail":"liyinan001@gmail.com","coursename":"005JAVA","lesson01":"Unmark","lesson02":"Unmark","lesson03":"Unmark","lesson04":"Unmark","lesson05":"Unmark","lesson06":"Unmark","lesson07":"Unmark","lesson08":"Unmark","lesson09":"Unmark","date01":"2022-07-08","date02":"2022-07-15","date03":"2022-07-22","date04":"2022-07-29","date05":"2022-08-06","date06":"2022-07-09","date07":"2022-07-16","date08":"2022-07-23","date09":"2022-07-23","teacher":"liyinan41@gmail.com"}]
 
 
-    
-     const today = new Date().toISOString().slice(0, 10);
-     let  unmarked=Number(0);
-     console.log(today);
-     console.log(data[0].date01);
-
-if(today>data[0].date01){
-    console.log(today);
- }
+let data2=["finnish","danish","english"]
+console.log(data2);
+console.log(data2[0])
 
