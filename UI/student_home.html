@@ -119,7 +119,7 @@ function courseOfStudent(){
                     if(trafficLight[i].studentemail==userEmail){
                         output+='<form action="/confirm" method="POST">'
                         +'<input type="hidden" name="studentEmail" value="'+userEmail+'" >'    
-                        +'<input name=courseName value="'+trafficLight[i].coursename+'"></input>'+'<br />'+'<br />'
+                        +'<h3 name=courseName value="'+trafficLight[i].coursename+'"></h3>'+'<br />'+'<br />'
                         +'<lable for='+trafficLight[i].date01+'>'+trafficLight[i].date01+'</lable>'
                         +'<select type="text" id='+trafficLight[i].date01+' name="lesson01" style="background-color:'+trafficLight[i].lesson01+'">'
                             +'<option value="'+trafficLight[i].lesson01+'">'+trafficLight[i].lesson01+'</option>'
@@ -192,63 +192,12 @@ function courseOfStudent(){
                
                 document.getElementById("courseList").innerHTML=output;
                
-                
-        //get notification for marking the light
-   
-        
-                /*const element= document.getElementById(lightList[i].date);
-                const today = new Date().toISOString().slice(0, 10);
-                let  unmarked=Number(0);
-                for (const element of elements) {
-                   
-                    if (element.value='Unmark' && element.id<today) {
-                        unmarked +=1;
-                    }
-                   
-                }
-                if (unmarked==0) {
-                    document.getElementById("message").innerText='You have'+' '+unmarked+' '+'traffic light to mark.'
-                    document.getElementById("message").style.color='black';
-
-                }else {
-                    document.getElementById("message").innerText='You have'+' '+unmarked+' '+'traffic lights to mark!'
-                    document.getElementById("message").style.color='red';
-
-                }*/
-                
             }
     }
     //send request
     xhr.send();
 }
 
-// traffic light control
-/*function trafficLight(){     
-      
-    const elements = document.getElementsByClassName('trafficLight');
-    for (const element of elements) {
-        let color = element.value; 
-       
-            switch (color) {
-                case 'green':
-                    element.style.backgroundColor = 'green';
-                    break;
-                case 'yellow':
-                    element.style.backgroundColor = 'yellow';
-                    break;
-                case 'red':
-                    element.style.backgroundColor = 'red';
-                    break;
-               default:
-                    element.style.backgroundColor = 'white';
-                    break;                  
-            }
-           console.log(color);
-           
-        }
-        
-    }
-*/
 
 
     </script>

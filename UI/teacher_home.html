@@ -16,7 +16,6 @@
 
     <div class="userbar" >
         <a href="#" id="createCourse">Create a Course</a>
-        <a href="#" id="message" >Summary</a>
         <a href="#" id="user" > user</a>
         <a href="https://stark-ridge-06549.herokuapp.com/">Log out</a>
     </div>
@@ -151,6 +150,7 @@ function loginUser(){
     //send request
     xhr.send();
 }
+
 // show all students name
 
 function studentslist(){
@@ -174,7 +174,7 @@ function studentslist(){
 //send request
 xhr.send();
 }
-
+// get user's courses from database and make it an local array for later use.
 function loadJason(){
             let userEmail=localStorage.getItem("userEmail");
             document.getElementById("user").innerText=userEmail;
@@ -201,6 +201,7 @@ function loadJason(){
         //send request
         xhr.send();
     }
+    // show courses and students' study traffic lights 
     function loadLight(){
             let userEmail=localStorage.getItem("userEmail");
             let courseArray=JSON.parse(localStorage.getItem("coursecourses"));
