@@ -119,7 +119,7 @@ function courseOfStudent(){
                     if(trafficLight[i].studentemail==userEmail){
                         output+='<form action="/confirm" method="POST">'
                         +'<input type="hidden" name="studentEmail" value="'+userEmail+'" >'    
-                        +'<h3 name=courseName value="'+trafficLight[i].coursename+'"></h3>'+'<br />'+'<br />'
+                        +'<h3 name=courseName>'+trafficLight[i].coursename+'</h3>'+'<br />'+'<br />'
                         +'<lable for='+trafficLight[i].date01+'>'+trafficLight[i].date01+'</lable>'
                         +'<select type="text" id='+trafficLight[i].date01+' name="lesson01" style="background-color:'+trafficLight[i].lesson01+'">'
                             +'<option value="'+trafficLight[i].lesson01+'">'+trafficLight[i].lesson01+'</option>'
