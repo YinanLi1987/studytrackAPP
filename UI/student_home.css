@@ -23,6 +23,7 @@ header{
 }
 form{ 
     display:block; 
+    padding: 5px;
     justify-content:space-around;  
 }
 footer{ 
