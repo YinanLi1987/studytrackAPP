@@ -40,7 +40,7 @@ app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
 
 
 // get data from table usrInfo
-app.get('/db2', async (req, res) => {
+app.get('/courseinfo', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -62,7 +62,7 @@ app.get('/db2', async (req, res) => {
           }
       });
       // get data from table usrInfo
-app.get('/db', async (req, res) => {
+app.get('/userinfo', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -86,7 +86,7 @@ app.get('/db', async (req, res) => {
       });
 //get all data of traffic light
 // get data from table usrInfo
-app.get('/db3', async (req, res) => {
+app.get('/trafficlights', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -108,7 +108,7 @@ app.get('/db3', async (req, res) => {
           }
       });
 // get all students fname and lname 
-app.get('/dbstudent', async (req, res) => {
+/*app.get('/dbstudent', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -129,7 +129,7 @@ app.get('/dbstudent', async (req, res) => {
           console.error(err);
           res.json({ error: err });
           }
-      });
+      });*/
 
 
 // submit sign data into database table usrInfo
@@ -157,6 +157,8 @@ app.post('/submit', async (req, res) => {
             res.json({ error: err });
         }
       });
+
+
 //log in validate and redirect to target page
 app.post('/login', async (req, res) => {
     const { Pool } = require('pg');
