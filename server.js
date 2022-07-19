@@ -4,14 +4,10 @@ const serveStatic = require('serve-static')
 const path = require('path');
 const bodyParser= require('body-parser');
 const bcrypt = require('bcrypt');
-const passport = require('passport');
-const BasicStrategy= require('passport-http').BasicStrategy;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
-
-
 // get each page
-app.get("/", function(req, res) {
+/*app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "UI/home.html"));
     });
 app.use('/', serveStatic(path.join(__dirname, 'UI')));
@@ -22,24 +18,17 @@ app.get("/teacher_home", function(req, res) {
 });
 app.use('/teacher_home', serveStatic(path.join(__dirname, 'UI')));
 
-app.get("/teacher_course", function(req, res) {
-    res.sendFile(path.join(__dirname, "UI/teacher_course.html"));
-});
-app.use('/teacher_course', serveStatic(path.join(__dirname, 'UI')));
 
 app.get("/student_home", function(req, res) {
     res.sendFile(path.join(__dirname, "UI/student_home.html"));
 });
 app.use('/student_home', serveStatic(path.join(__dirname, 'UI')));
 
-app.get("/student_course", function(req, res) {
-    res.sendFile(path.join(__dirname, "UI/student_course.html"));
-});
-app.use('/student_course', serveStatic(path.join(__dirname, 'UI')));
+
+*/
 
 
-
-// get data from table usrInfo
+// For testing : get all course information from courseInfo table
 app.get('/courseinfo', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
@@ -61,7 +50,7 @@ app.get('/courseinfo', async (req, res) => {
           res.json({ error: err });
           }
       });
-      // get data from table usrInfo
+// For testing : get all user information from usrInfo table
 app.get('/userinfo', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
@@ -84,8 +73,7 @@ app.get('/userinfo', async (req, res) => {
           res.json({ error: err });
           }
       });
-//get all data of traffic light
-// get data from table usrInfo
+// For testing : get all students trafficlights information from trafficlight table
 app.get('/trafficlights', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
@@ -107,7 +95,7 @@ app.get('/trafficlights', async (req, res) => {
           res.json({ error: err });
           }
       });
-// get all students fname and lname 
+// get all students fname and lname from usrInfo table, for adding students when creating a course
 app.get('/dbstudent', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
