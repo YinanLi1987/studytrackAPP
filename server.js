@@ -108,7 +108,7 @@ app.get('/trafficlights', async (req, res) => {
           }
       });
 // get all students fname and lname 
-/*app.get('/dbstudent', async (req, res) => {
+app.get('/dbstudent', async (req, res) => {
     const { Pool } = require('pg');
         const pool = (() => {
             return new Pool({
@@ -129,7 +129,7 @@ app.get('/trafficlights', async (req, res) => {
           console.error(err);
           res.json({ error: err });
           }
-      });*/
+      });
 
 
 // submit sign data into database table usrInfo
