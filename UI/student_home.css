@@ -21,11 +21,6 @@ header{
     margin: 10px;
     color:#00BFB2; 
 }
-form{ 
-    display:block; 
-    padding: 5px;
-    justify-content:space-around;  
-}
 footer{ 
     display: flex;
     margin-top: 100px;
